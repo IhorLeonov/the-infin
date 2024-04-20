@@ -1,0 +1,13 @@
+$dark: #121212;
+$light: #fff;
+$accent: #ffcd00;
+$grey: #c1c1c1;
+$darkGrey: #6b6b6b;
+
+:export {
+  dark: $dark;
+  light: $light;
+  accent: $accent;
+  grey: $grey;
+  darkGrey: $darkGrey;
+}

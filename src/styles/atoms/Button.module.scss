@@ -1,0 +1,61 @@
+@import "../variables";
+
+.button {
+  display: inline-block;
+  padding: 12px;
+
+  width: 223px;
+  height: 90px;
+
+  text-align: center;
+  border: none;
+  border-radius: 129px;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.primary {
+  color: $light;
+  background-color: $dark;
+
+  &:hover,
+  &:focus {
+    background-color: $accent;
+    color: $dark;
+  }
+}
+
+.ghost {
+  width: 223px;
+  height: 90px;
+
+  background: none;
+  font-weight: 500;
+  letter-spacing: 0.24px;
+
+  color: $dark;
+  border: 1px solid rgba(18, 18, 18, 0.16);
+
+  &:hover,
+  &:focus {
+    border: none;
+    background-color: $accent;
+  }
+}
+
+.light {
+  color: $dark;
+  background-color: $light;
+
+  &:hover,
+  &:focus {
+    background-color: $dark;
+    color: $light;
+  }
+}
