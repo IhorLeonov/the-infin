@@ -1,0 +1,45 @@
+.section {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 130px;
+}
+
+.title {
+  width: 359px;
+  grid-column: 1;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 104px;
+}
+
+.pluses {
+  position: absolute;
+  left: 18px;
+  bottom: 30px;
+}
+
+@media screen and (max-width: 950px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+
+  .cardList {
+    padding-left: 0;
+  }
+
+  .pluses {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .title {
+    width: auto;
+  }
+}

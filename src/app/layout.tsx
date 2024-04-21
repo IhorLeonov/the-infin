@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../styles/globals.scss";
 
-import Header from "@/components/organisms/Header/header";
-import Footer from "@/components/organisms/Footer/footer";
+import Layout from "@/components/organisms/Layout";
 
 const neueHaasGrotesk = localFont({
   src: [
@@ -35,9 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={neueHaasGrotesk.className}>
-        <Header />
-        {children}
-        <Footer />
+        <Layout>{children}</Layout>
       </body>
     </html>
   );

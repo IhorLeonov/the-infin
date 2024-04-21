@@ -16,7 +16,7 @@
   letter-spacing: 0.24px;
   text-transform: uppercase;
 
-  transition: all 0.5s;
+  transition: all 0.4s;
   cursor: pointer;
 }
 
@@ -44,8 +44,8 @@
 
   &:hover,
   &:focus {
-    border: none;
-    background-color: $accent;
+    border-color: $accent;
+    color: $accent;
   }
 }
 

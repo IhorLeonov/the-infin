@@ -1,12 +1,15 @@
-import { Button } from "@/components/atoms/Button";
-import styles from "../styles/organisms/Home.module.scss";
-import { Htag } from "@/components/atoms/Htag";
-import { Section } from "@/components/molecules/Section";
+import Hero from "@/components/organisms/Hero";
+import styles from "../styles/components/HomePage.module.scss";
+import WhyChoose from "@/components/organisms/WhyChoose";
+import HeroImage from "@/components/organisms/HeroImage";
+// import { Button } from "@/components/atoms/Button";
+// import { Htag } from "@/components/atoms/Htag";
+// import { Section } from "@/components/molecules/Section";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main>
-      <div>
+    <div className={styles.page}>
+      {/* <div>
         <Button appearance="primary">Schedule a demo</Button>
         <Button appearance="ghost">Contact</Button>
         <Button appearance="light" className={styles.button}>
@@ -23,7 +26,10 @@ export default function Home() {
 
       <Section className={styles.section} numb="01" title="Business">
         Section
-      </Section>
-    </main>
+      </Section> */}
+      <Hero />
+      <HeroImage />
+      <WhyChoose />
+    </div>
   );
 }

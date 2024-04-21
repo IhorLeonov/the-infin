@@ -1,0 +1,56 @@
+@import "../variables";
+
+.header {
+  display: flex;
+  padding: 30px 30px 0 30px;
+}
+
+.logo {
+  display: flex;
+  gap: 34px;
+}
+
+.nav {
+  margin-left: auto;
+
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.button {
+  margin-left: 249px;
+}
+
+@media screen and (max-width: 1340px) {
+  .button {
+    margin-left: 120px;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav {
+    margin-left: 0;
+  }
+
+  .button {
+    margin-left: 0;
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 455px) {
+  .button {
+    margin-left: auto;
+  }
+}
