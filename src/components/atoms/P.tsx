@@ -8,12 +8,12 @@ export interface PProps
     HTMLParagraphElement
   > {
   children: ReactNode;
-  size?: "s" | "m";
+  size: "s" | "m";
 }
 
 export const P = ({
   children,
-  size = "m",
+  size,
   className,
   ...props
 }: PProps): JSX.Element => {

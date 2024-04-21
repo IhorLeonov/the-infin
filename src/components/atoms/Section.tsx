@@ -31,10 +31,10 @@ export const Section = ({
       )}
       {...props}
     >
-      <div className={styles.header}>
+      {/* <div className={styles.header}>
         {numb && <span className={styles.numb}>{numb}</span>}
         {shortTitle && <h2 className={styles.shortTitle}>{shortTitle}</h2>}
-      </div>
+      </div> */}
       {children}
     </section>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/components/Hero.module.scss";
 import Image from "next/image";
-import { Section } from "../molecules/Section";
+import { Section } from "../atoms/Section";
 import { Title } from "../atoms/Title";
 import { Button } from "../atoms/Button";
 

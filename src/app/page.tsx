@@ -2,6 +2,7 @@ import Hero from "@/components/organisms/Hero";
 import styles from "../styles/components/HomePage.module.scss";
 import WhyChoose from "@/components/organisms/WhyChoose";
 import HeroImage from "@/components/organisms/HeroImage";
+import Business from "@/components/organisms/Business";
 // import { Button } from "@/components/atoms/Button";
 // import { Htag } from "@/components/atoms/Htag";
 // import { Section } from "@/components/molecules/Section";
@@ -30,6 +31,7 @@ export default function HomePage() {
       <Hero />
       <HeroImage />
       <WhyChoose />
+      <Business />
     </div>
   );
 }

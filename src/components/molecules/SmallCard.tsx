@@ -20,9 +20,7 @@ export default function SmallCard({ title, text, imageSrc }: SmallCardProps) {
           {title}
         </Title>
 
-        <P className={styles.text} size="m">
-          {text}
-        </P>
+        <p className={styles.text}>{text}</p>
 
         <Image
           className={styles.image}

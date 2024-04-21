@@ -48,20 +48,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
-  .hero .title {
-    font-size: 62px;
-    line-height: 68px;
-    letter-spacing: -0.62px;
-  }
-}
-
 @media screen and (max-width: 455px) {
-  .hero .title {
-    font-size: 42px;
-    line-height: 46px;
-  }
-
   .button {
     margin-left: auto;
     margin-right: 0;

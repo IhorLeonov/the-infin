@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 
 const useCheckIsMobile = () => {
+  if (typeof window === "undefined") {
+    return { isTablet: false, isMobile: false };
+  }
+
   const [width, setWidth] = useState(window.innerWidth);
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);

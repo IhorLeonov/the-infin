@@ -1,5 +1,5 @@
 import React from "react";
-import { Section } from "../molecules/Section";
+import { Section } from "../atoms/Section";
 import { Title } from "../atoms/Title";
 import styles from "../../styles/components/WhyChoose.module.scss";
 import SmallCard from "../molecules/SmallCard";

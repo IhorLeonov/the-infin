@@ -1,0 +1,48 @@
+@import "../variables";
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 421px;
+  grid-template-rows: auto auto auto;
+  margin-top: 130px;
+
+  background-color: $light;
+}
+
+.numb {
+  grid-column: 1;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+}
+
+.title {
+  grid-column: 1;
+
+  margin-top: 36px;
+  max-width: 668px;
+}
+
+.description {
+  grid-column: 1;
+
+  margin-top: 40px;
+}
+
+.cardImage {
+  grid-column: 2;
+  grid-row: 1 / -1;
+}
+
+@media screen and (max-width: 1320px) {
+  .section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .cardImage {
+    grid-column: 1;
+    grid-row: 4;
+  }
+}
