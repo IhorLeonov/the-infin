@@ -1,0 +1,23 @@
+.reviewer {
+  display: flex;
+  margin-top: 24px;
+
+  align-items: center;
+}
+
+.nameBox {
+  display: block;
+  margin-left: 12px;
+}
+
+.name {
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.job {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  opacity: 0.4;
+}

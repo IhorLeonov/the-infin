@@ -4,7 +4,7 @@
   display: flex;
   gap: 30px;
 
-  background-color: $light;
+  background-color: #e8e8e8;
 }
 
 .box {
@@ -33,5 +33,9 @@
 
   .box {
     width: auto;
+  }
+
+  .imageWithButton {
+    order: 3;
   }
 }

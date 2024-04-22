@@ -13,7 +13,7 @@ interface DescriptionProps
 export default function Description({ className, ...props }: DescriptionProps) {
   return (
     <div className={clsx(className)} {...props}>
-      <Divider />
+      <Divider className={styles.hr} />
 
       <div className={styles.topBlock}>
         <Title className={styles.title} tag="h3">
@@ -30,7 +30,7 @@ export default function Description({ className, ...props }: DescriptionProps) {
         </p>
       </div>
 
-      <Divider />
+      <Divider className={styles.hr} />
 
       <div className={styles.bottomBlock}>
         <Title className={styles.title} tag="h3">

@@ -1,0 +1,46 @@
+@import '../variables';
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+  margin-top: 65px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.buttonLeft,
+.buttonRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 66px;
+  height: 66px;
+
+  border-radius: 50%;
+  background-color: #ffffff18;
+
+  svg {
+    scale: 1.5;
+    fill: $accent;
+  }
+}
+
+.buttonRight svg {
+  rotate: 180deg;
+}
+
+.span {
+  opacity: 0.3;
+}

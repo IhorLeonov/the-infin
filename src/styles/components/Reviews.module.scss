@@ -1,0 +1,64 @@
+@import '../variables';
+@import '../mixins';
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 80px;
+
+  color: $light;
+  background-color: $dark;
+}
+
+.numb {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+}
+
+.title {
+  margin-top: 36px;
+  max-width: 489px;
+  color: $light;
+}
+
+.titleAccent {
+  color: $accent;
+}
+
+.pluses {
+  display: inline-flex;
+  gap: 14px;
+  margin-top: 150px;
+}
+
+.plusIcon {
+  stroke: $light;
+  stroke-width: 2.5px;
+  opacity: 0.4;
+}
+
+.description {
+  @include paragraphS;
+
+  margin-top: 122px;
+  width: 283px;
+
+  & p {
+    opacity: 0.4;
+  }
+}
+
+.hr {
+  margin-top: 24px;
+  margin-bottom: 24px;
+
+  background-color: $light;
+  opacity: 0.08;
+}
+
+@media screen and (max-width: 1320px) {
+  .section {
+    display: block;
+  }
+}

@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .topBlock {
   display: flex;
   padding-bottom: 60px;
@@ -7,13 +9,16 @@
   width: 122px;
 }
 
+.hr {
+  width: calc(100% + 30px);
+}
+
 .bigText {
   max-width: 668px;
 }
 
 .bottomBlock {
   display: flex;
-  padding-bottom: 50px;
 
   & :nth-child(3) {
     margin-left: 106px;
@@ -21,13 +26,12 @@
 }
 
 .bottomText {
+  @include paragraphS;
+
   display: flex;
   flex-direction: column;
   gap: 12px;
   width: 223px;
-
-  font-size: 14px;
-  line-height: 18px;
 }
 
 @media screen and (max-width: 880px) {

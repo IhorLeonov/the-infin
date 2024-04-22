@@ -1,0 +1,10 @@
+.logo {
+  display: flex;
+  gap: 34px;
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    gap: 15px;
+  }
+}

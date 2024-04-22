@@ -1,10 +1,10 @@
 import React, { DetailedHTMLProps, HtmlHTMLAttributes } from "react";
-import styles from "../../styles/components/CardImage.module.scss";
+import styles from "../../styles/components/ImageWithButton.module.scss";
 import Image from "next/image";
 import { Button } from "../atoms/Button";
 import clsx from "clsx";
 
-interface CardImageProps
+interface ImageWithButtonProps
   extends DetailedHTMLProps<
     HtmlHTMLAttributes<HTMLDivElement>,
     HTMLDivElement
@@ -14,13 +14,13 @@ interface CardImageProps
   imageAlt: string;
 }
 
-export default function CardImage({
+export default function ImageWithButton({
   imageSrc,
   imageAlt,
   btnText,
   className,
   ...props
-}: CardImageProps) {
+}: ImageWithButtonProps) {
   return (
     <div className={clsx(styles.wrapper, className)} {...props}>
       <Image
@@ -31,7 +31,7 @@ export default function CardImage({
         layout="responsive"
         loading="lazy"
         alt={imageAlt}
-      ></Image>
+      />
 
       <Button className={styles.button} appearance="primary">
         {btnText}
