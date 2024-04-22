@@ -1,4 +1,4 @@
-@import "../variables";
+@import '../variables';
 
 .section {
   display: flex;
@@ -9,12 +9,6 @@
 
 .box {
   width: calc(100% - 421px);
-}
-
-.numb {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 14px;
 }
 
 .title {

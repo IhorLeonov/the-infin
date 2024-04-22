@@ -1,9 +1,11 @@
-import React from "react";
-import { Section } from "../atoms/Section";
-import { Title } from "../atoms/Title";
-import styles from "../../styles/components/WhyChoose.module.scss";
-import WhyChooseItem from "../molecules/WhyChooseItem";
-import Image from "next/image";
+import React from 'react';
+import styles from '../../styles/components/WhyChoose.module.scss';
+
+import { Section } from '../atoms/Section';
+import { Title } from '../atoms/Title';
+
+import WhyChooseItem from '../molecules/WhyChooseItem';
+import PlusesIcon from '../../../public/icons/plusGroup.svg';
 
 interface WhyChooseProps {}
 
@@ -27,13 +29,7 @@ export default function WhyChoose({}: WhyChooseProps) {
         />
       </ul>
 
-      <Image
-        className={styles.pluses}
-        src="/icons/plusGroup.svg"
-        width={145}
-        height={92}
-        alt="pluses"
-      />
+      <PlusesIcon className={styles.pluses} />
     </Section>
   );
 }

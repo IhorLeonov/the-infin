@@ -1,8 +1,9 @@
 import React, { DetailedHTMLProps, HtmlHTMLAttributes } from 'react';
-import style from '../../styles/components/ReviewList.module.scss';
+import styles from '../../styles/components/ReviewList.module.scss';
 import clsx from 'clsx';
-import ReviewItem from './ReviewItem';
+
 import { IReview } from '@/lib/types';
+import ReviewItem from './ReviewItem';
 import ArrowIcon from '../../../public/icons/arrow.svg';
 
 interface ReviewListProps
@@ -19,23 +20,23 @@ export default function ReviewList({
   ...props
 }: ReviewListProps) {
   return (
-    <div className={clsx(style.reviews, className)} {...props}>
-      <ul className={style.list}>
+    <div className={clsx(styles.reviews, className)} {...props}>
+      <ul className={styles.list}>
         {reviews.map((review) => (
           <ReviewItem key={review.name} {...review} />
         ))}
       </ul>
 
-      <div className={style.pagination}>
-        <button className={style.buttonLeft}>
+      <div className={styles.pagination}>
+        <button className={styles.buttonLeft}>
           <ArrowIcon />
         </button>
 
         <div>
-          01 <span className={style.span}>/ 03</span>
+          01 <span className={styles.span}>/ 03</span>
         </div>
 
-        <button className={style.buttonRight}>
+        <button className={styles.buttonRight}>
           <ArrowIcon />
         </button>
       </div>

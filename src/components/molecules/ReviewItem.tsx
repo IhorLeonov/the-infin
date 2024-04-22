@@ -1,7 +1,8 @@
 import React, { DetailedHTMLProps, HtmlHTMLAttributes } from 'react';
-import Image from 'next/image';
-import style from '../../styles/components/ReviewItem.module.scss';
+import styles from '../../styles/components/ReviewItem.module.scss';
 import clsx from 'clsx';
+
+import Image from 'next/image';
 
 interface ReviewItemProps
   extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
@@ -20,12 +21,12 @@ export default function ReviewItem({
   ...props
 }: ReviewItemProps) {
   return (
-    <li className={clsx(style.reviewItem, className)} {...props}>
-      <p className={style.review}>{review}</p>
+    <li className={clsx(styles.reviewItem, className)} {...props}>
+      <p className={styles.review}>{review}</p>
 
-      <div className={style.reviewer}>
+      <div className={styles.reviewer}>
         <Image
-          className={style.photo}
+          className={styles.photo}
           src={imageSrc}
           width={52}
           height={52}
@@ -33,9 +34,9 @@ export default function ReviewItem({
           loading="lazy"
         />
 
-        <div className={style.nameBox}>
-          <div className={style.name}>{name}</div>
-          <div className={style.job}>{job}</div>
+        <div className={styles.nameBox}>
+          <div className={styles.name}>{name}</div>
+          <div className={styles.job}>{job}</div>
         </div>
       </div>
     </li>

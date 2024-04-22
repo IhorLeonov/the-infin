@@ -44,3 +44,9 @@
 .span {
   opacity: 0.3;
 }
+
+@media screen and (max-width: 1320px) {
+  .pagination {
+    margin-top: 54px;
+  }
+}

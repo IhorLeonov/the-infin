@@ -1,0 +1,92 @@
+@import '../mixins';
+@import '../variables';
+
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 160px;
+
+  background-color: $accent;
+}
+
+.text {
+  @include paragraphS;
+
+  margin-top: 159px;
+}
+
+.textStrong {
+  text-align: center;
+  margin-top: 20px;
+  max-width: 782px;
+
+  font-size: 120px;
+  font-weight: 500;
+  line-height: 110px;
+  letter-spacing: -1.2px;
+  text-transform: uppercase;
+}
+
+.button {
+  margin-top: 30px;
+  width: 260px;
+
+  color: $dark;
+  background-color: $light;
+
+  &:hover {
+    color: $light;
+    background-color: $dark;
+  }
+}
+
+.girlImage {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+
+.boyImage {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+.plusesLeft {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+}
+
+.plusesRight {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+
+  rotate: 180deg;
+}
+
+@media screen and (max-width: 1320px) {
+  .girlImage,
+  .boyImage {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .text {
+    margin-top: 100px;
+  }
+
+  .textStrong {
+    font-size: 60px;
+    line-height: 55px;
+    letter-spacing: -0.6px;
+  }
+
+  .plusesRight {
+    display: none;
+  }
+}

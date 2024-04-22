@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from '../../styles/components/Reviews.module.scss';
+
 import { Section } from '../atoms/Section';
 import { Title } from '../atoms/Title';
-import PlusIcon from '../../../public/icons/plus.svg';
 import { Divider } from '../atoms/Divider';
-import ReviewList from '../molecules/ReviewList';
+import { CardTitle } from '../molecules/CardTitle';
 import { reviews } from '@/lib/constants';
+
+import PlusIcon from '../../../public/icons/plus.svg';
+import ReviewList from '../molecules/ReviewList';
 
 interface ReviewsProps {}
 
@@ -13,7 +16,12 @@ export default function Reviews({}: ReviewsProps) {
   return (
     <Section className={styles.section} type="filled">
       <div className={styles.firstBlock}>
-        <span className={styles.numb}>03</span>
+        <CardTitle
+          className={styles.cardTitle}
+          showTitle={false}
+          cardNumber="03"
+          cardTitle="Reviews"
+        />
 
         <Title className={styles.title} tag="h2">
           <span>Fairness and</span>{' '}
