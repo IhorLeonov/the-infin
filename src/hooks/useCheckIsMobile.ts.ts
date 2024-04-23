@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const useCheckIsMobile = () => {
-  if (typeof window === "undefined") {
+  if (typeof window === 'undefined') {
     return { isTablet: false, isMobile: false };
   }
 
@@ -11,9 +11,9 @@ const useCheckIsMobile = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("resize", handleWindowSizeChange);
+    window.addEventListener('resize', handleWindowSizeChange);
     return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
+      window.removeEventListener('resize', handleWindowSizeChange);
     };
   }, []);
 

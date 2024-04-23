@@ -9,6 +9,7 @@ import FinIcon from '../../../public/icons/logo/fin.svg';
 
 import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
+import useCheckIsMobile from '@/hooks/useCheckIsMobile.ts';
 
 interface WelcomeAnimationProps {
   setShowAll: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,7 +18,12 @@ interface WelcomeAnimationProps {
 export default function WelcomeAnimation({
   setShowAll,
 }: WelcomeAnimationProps) {
+  const { isMobile, isTablet } = useCheckIsMobile();
   const [mounted, setMounted] = useState(false);
+
+  if (isMobile || isTablet) {
+    return;
+  }
 
   useEffect(() => {
     setMounted(true);
