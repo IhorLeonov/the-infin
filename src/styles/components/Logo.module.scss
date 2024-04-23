@@ -1,10 +1,11 @@
-.logo {
-  display: flex;
-  gap: 34px;
-}
+.logoBox {
+  max-width: 1380px;
+  max-height: 242px;
 
-@media screen and (max-width: 600px) {
-  .logo {
-    gap: 15px;
+  svg {
+    max-width: 100%;
+
+    width: auto;
+    height: auto;
   }
 }

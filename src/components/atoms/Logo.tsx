@@ -1,5 +1,5 @@
 import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
-import styles from '../../styles/components/LogoNew.module.scss';
+import styles from '../../styles/components/Logo.module.scss';
 import clsx from 'clsx';
 
 export interface LogoProps
