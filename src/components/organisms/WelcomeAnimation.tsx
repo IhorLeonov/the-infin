@@ -22,6 +22,7 @@ export default function WelcomeAnimation({
   const [mounted, setMounted] = useState(false);
 
   if (isMobile || isTablet) {
+    setShowAll(true);
     return;
   }
 
