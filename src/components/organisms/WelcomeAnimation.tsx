@@ -51,7 +51,7 @@ export default function WelcomeAnimation() {
             <IIcon />
           </motion.div>
 
-          <motion.div>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <NIcon />
           </motion.div>
 
