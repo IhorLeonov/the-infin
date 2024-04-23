@@ -28,10 +28,12 @@ export default function Cursor({
 
   useEffect(() => {
     const mouseMove = (e: MouseEvent) => {
-      setCursor({
-        x: e.clientX,
-        y: e.clientY,
-      });
+      setTimeout(() => {
+        setCursor({
+          x: e.clientX,
+          y: e.clientY,
+        });
+      }, 100);
     };
     window.addEventListener('mousemove', mouseMove);
 

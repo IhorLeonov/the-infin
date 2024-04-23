@@ -16,6 +16,13 @@
 
 .title {
   background-color: $grey;
+
+  &::selection {
+    background: $accent;
+  }
+  &::-moz-selection {
+    background: $accent;
+  }
 }
 
 .smallTitle,

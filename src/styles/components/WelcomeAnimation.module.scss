@@ -1,0 +1,26 @@
+@import '../variables';
+
+.wrapper {
+  position: absolute;
+  display: block;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $dark;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+}
+
+.the {
+  margin-right: 48px;
+}
