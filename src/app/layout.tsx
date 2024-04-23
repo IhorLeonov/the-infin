@@ -3,7 +3,6 @@ import localFont from 'next/font/local';
 import '../styles/globals.scss';
 
 import Layout from '@/components/organisms/Layout';
-import WelcomeAnimation from '@/components/organisms/WelcomeAnimation';
 
 const neueHaasGrotesk = localFont({
   src: [
@@ -35,7 +34,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={neueHaasGrotesk.className}>
-        <WelcomeAnimation />
         <Layout>{children}</Layout>
       </body>
     </html>

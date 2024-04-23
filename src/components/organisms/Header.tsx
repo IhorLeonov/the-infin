@@ -2,14 +2,16 @@ import React from 'react';
 import styles from '../../styles/components/Header.module.scss';
 import { Button } from '../atoms/Button';
 import Logo from '../atoms/Logo';
+import WelcomeAnimation from './WelcomeAnimation';
 
 interface HeaderProps {}
 
 export default function Header({}: HeaderProps) {
   return (
     <header className={styles.header}>
+      <WelcomeAnimation />
       <Logo style={{ maxWidth: 514, maxHeight: 90 }} />
-      
+
       <nav className={styles.nav}>
         <a href="#home">
           <p className={styles.p}>Home</p>

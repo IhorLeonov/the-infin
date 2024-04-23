@@ -7,7 +7,7 @@ import IIcon from '../../../public/icons/logo/i.svg';
 import NIcon from '../../../public/icons/logo/n.svg';
 import FinIcon from '../../../public/icons/logo/fin.svg';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 export default function WelcomeAnimation() {
