@@ -1,3 +1,5 @@
+@import '../variables';
+
 .hero {
   position: relative;
   padding-top: 136px;
@@ -10,6 +12,10 @@
 .bottomBlock {
   display: flex;
   margin-top: 128px;
+}
+
+.title {
+  background-color: $grey;
 }
 
 .smallTitle,

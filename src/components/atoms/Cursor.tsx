@@ -1,5 +1,3 @@
-'use client';
-
 import React, {
   DetailedHTMLProps,
   HTMLAttributes,
@@ -8,6 +6,7 @@ import React, {
 } from 'react';
 import styles from '../../styles/components/Cursor.module.scss';
 import clsx from 'clsx';
+import PlusIcon from '../../../public/icons/plus.svg';
 
 export interface CursorProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -43,7 +42,6 @@ export default function Cursor({
 
   return (
     <div
-      id="cursor"
       style={{
         left: cursor.x + 'px',
         top: cursor.y + 'px',
@@ -51,6 +49,39 @@ export default function Cursor({
       }}
       className={clsx(styles.cursor, className)}
       {...props}
-    ></div>
+    >
+      <div className={styles.grid}>
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+        <PlusIcon />
+      </div>
+    </div>
   );
 }

@@ -1,9 +1,17 @@
 .cursor {
-  width: 20px;
-  height: 20px;
-  background-color: hsl(0, 0%, 100%);
   position: fixed;
-  border-radius: 50%;
+  z-index: -1;
 
   transform: translate(-50%, -50%);
+
+  svg {
+    stroke: #fff;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 38.784px);
+  grid-template-rows: repeat(5, 38.784px);
+  gap: 14px;
 }

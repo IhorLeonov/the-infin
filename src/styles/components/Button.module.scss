@@ -1,4 +1,4 @@
-@import "../variables";
+@import '../variables';
 
 .button {
   display: inline-block;
@@ -17,7 +17,6 @@
   text-transform: uppercase;
 
   transition: all 0.4s;
-  cursor: pointer;
 }
 
 .primary {
