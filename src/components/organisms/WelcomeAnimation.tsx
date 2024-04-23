@@ -13,17 +13,16 @@ import { useState, useEffect } from 'react';
 export default function WelcomeAnimation() {
   const [mounted, setMounted] = useState(false);
 
+  document.body.style.overflow = 'hidden';
+
   useEffect(() => {
     setMounted(true);
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => {
-      setTimeout(() => {
-        document.body.style.overflow = 'scroll';
-      }, 5000);
-    };
+    setTimeout(() => {
+      document.body.style.overflow = 'scroll';
+    }, 5000);
   }, []);
 
   return (
