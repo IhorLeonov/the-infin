@@ -19,6 +19,10 @@ body {
 
   overscroll-behavior: none;
   cursor: url('/icons/cursor.svg'), default;
+
+  & * {
+    z-index: 1;
+  }
 }
 
 a {

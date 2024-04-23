@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import '../styles/globals.scss';
 
 import ClientLayout from '@/components/organisms/ClientLayout';
+import { AppContextProvider } from '@/context/app.context';
 
 const neueHaasGrotesk = localFont({
   src: [
@@ -34,7 +35,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={neueHaasGrotesk.className}>
-        <ClientLayout>{children}</ClientLayout>
+        <AppContextProvider>
+          <ClientLayout>{children}</ClientLayout>
+        </AppContextProvider>
       </body>
     </html>
   );

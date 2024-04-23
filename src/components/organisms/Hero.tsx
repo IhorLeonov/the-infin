@@ -1,24 +1,24 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from '../../styles/components/Hero.module.scss';
 import Image from 'next/image';
 import { Section } from '../atoms/Section';
 import { Title } from '../atoms/Title';
 import { Button } from '../atoms/Button';
-import Cursor from '../atoms/Cursor';
+import { AppContext, IAppContext } from '@/context/app.context';
 
 interface HeroProps {}
 
 export default function Hero({}: HeroProps) {
-  const [cursorDisplay, setCursorDisplay] = useState<'block' | 'none'>('none');
+  const { setCursorVisibility } = useContext(AppContext) as IAppContext;
 
   return (
     <Section
       className={styles.hero}
       type="ghost"
-      onMouseLeave={() => setCursorDisplay('none')}
-      onMouseOver={() => setCursorDisplay('block')}
+      onMouseLeave={() => setCursorVisibility('none')}
+      onMouseOver={() => setCursorVisibility('block')}
     >
       <div className={styles.topBlock}>
         <Title className={styles.smallTitle} tag="h3">
@@ -48,8 +48,6 @@ export default function Hero({}: HeroProps) {
           Schedule a demo
         </Button>
       </div>
-
-      <Cursor cursorDisplay={cursorDisplay} className={styles.cursor} />
     </Section>
   );
 }

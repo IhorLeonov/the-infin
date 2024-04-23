@@ -28,7 +28,7 @@ export default function ReviewList({
       </ul>
 
       <div className={styles.pagination}>
-        <button className={styles.buttonLeft}>
+        <button aria-label="button preview" className={styles.buttonLeft}>
           <ArrowIcon />
         </button>
 
@@ -36,7 +36,7 @@ export default function ReviewList({
           01 <span className={styles.span}>/ 03</span>
         </div>
 
-        <button className={styles.buttonRight}>
+        <button aria-label="button next" className={styles.buttonRight}>
           <ArrowIcon />
         </button>
       </div>

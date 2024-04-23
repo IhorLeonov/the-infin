@@ -4,3 +4,5 @@ export interface IReview {
   name: string;
   job: string;
 }
+
+export type TypeCursorVisibility = 'block' | 'none';

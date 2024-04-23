@@ -1,8 +1,8 @@
-import React, { DetailedHTMLProps, HtmlHTMLAttributes } from "react";
-import styles from "../../styles/components/ImageWithButton.module.scss";
-import Image from "next/image";
-import { Button } from "../atoms/Button";
-import clsx from "clsx";
+import React, { DetailedHTMLProps, HtmlHTMLAttributes } from 'react';
+import styles from '../../styles/components/ImageWithButton.module.scss';
+import Image from 'next/image';
+import { Button } from '../atoms/Button';
+import clsx from 'clsx';
 
 interface ImageWithButtonProps
   extends DetailedHTMLProps<
