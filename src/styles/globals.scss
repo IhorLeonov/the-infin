@@ -15,8 +15,9 @@ body {
   margin-right: auto;
 
   color: $dark;
-  background-color: $grey;
+  background-color: $dark;
 
+  overscroll-behavior: none;
   cursor: url('/icons/cursor.svg'), default;
 }
 

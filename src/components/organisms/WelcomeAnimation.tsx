@@ -7,10 +7,16 @@ import IIcon from '../../../public/icons/logo/i.svg';
 import NIcon from '../../../public/icons/logo/n.svg';
 import FinIcon from '../../../public/icons/logo/fin.svg';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
 
-export default function WelcomeAnimation() {
+interface WelcomeAnimationProps {
+  setShowAll: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function WelcomeAnimation({
+  setShowAll,
+}: WelcomeAnimationProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -19,6 +25,10 @@ export default function WelcomeAnimation() {
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
+
+    setTimeout(() => {
+      setShowAll(true);
+    }, 2000);
 
     setTimeout(() => {
       document.body.style.overflow = 'scroll';
