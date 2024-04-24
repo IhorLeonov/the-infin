@@ -12,4 +12,9 @@
   // top: 200px;
   // & .card {
   // }
+
+  & .card {
+    // position: sticky;
+    // top: calc(100vh - 35px);
+  }
 }

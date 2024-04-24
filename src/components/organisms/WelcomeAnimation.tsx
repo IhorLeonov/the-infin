@@ -1,15 +1,14 @@
 'use client';
 
+import React, { useState, useEffect } from 'react';
 import styles from '../../styles/components/WelcomeAnimation.module.scss';
 
-import TheIcon from '../../../public/icons/logo/the.svg';
-import IIcon from '../../../public/icons/logo/i.svg';
-import NIcon from '../../../public/icons/logo/n.svg';
-import FinIcon from '../../../public/icons/logo/fin.svg';
-
 import { motion } from 'framer-motion';
-import React, { useState, useEffect } from 'react';
-import useCheckIsMobile from '@/hooks/useCheckIsMobile.ts';
+
+import FinIcon from '../../../public/icons/logo/fin';
+import NIcon from '../../../public/icons/logo/n';
+import IIcon from '../../../public/icons/logo/i';
+import TheIcon from '../../../public/icons/logo/the';
 
 interface WelcomeAnimationProps {
   setShowAll: React.Dispatch<React.SetStateAction<boolean>>;
@@ -18,13 +17,7 @@ interface WelcomeAnimationProps {
 export default function WelcomeAnimation({
   setShowAll,
 }: WelcomeAnimationProps) {
-  const { isMobile, isTablet } = useCheckIsMobile();
   const [mounted, setMounted] = useState(false);
-
-  if (isMobile || isTablet) {
-    setShowAll(true);
-    return;
-  }
 
   useEffect(() => {
     setMounted(true);
