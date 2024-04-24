@@ -64,7 +64,7 @@ export default function WelcomeAnimation({
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1, rotate: 360 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 1 }}
           >
             <NIcon />
           </motion.div>
