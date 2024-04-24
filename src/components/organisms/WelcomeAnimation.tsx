@@ -26,11 +26,12 @@ export default function WelcomeAnimation({
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
-    setTimeout(() => {
-      setShowAll(true);
-    }, 2000);
+    // setTimeout(() => {
+    //   setShowAll(true);
+    // }, 4000);
 
     setTimeout(() => {
+      setShowAll(true);
       document.body.style.overflow = 'scroll';
     }, 5000);
   }, []);

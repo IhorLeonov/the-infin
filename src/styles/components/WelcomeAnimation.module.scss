@@ -22,7 +22,7 @@
 
   display: flex;
   align-items: start;
-  z-index: 9;
+  flex-wrap: nowrap;
 
   & svg {
     width: 100%;
