@@ -9,3 +9,15 @@
   font-weight: 500;
   line-height: 26px;
 }
+
+@mixin transition {
+  transition: all 0.4s;
+}
+
+@mixin cursor-default {
+  cursor: url('/icons/cursor.svg'), default;
+}
+
+@mixin cursor-pointer {
+  cursor: url('/icons/cursor-pointer.svg'), pointer;
+}

@@ -9,12 +9,14 @@ import { Button } from '../atoms/Button';
 import girlImage from '../../../public/images/girl.png';
 import boyImage from '../../../public/images/boy.png';
 import PlusesIcon from '../../../public/icons/plusGroup.svg';
+import { CardProps } from '@/lib/types';
+import clsx from 'clsx';
 
-interface GetStartedProps {}
+interface GetStartedProps extends CardProps {}
 
-export default function GetStarted({}: GetStartedProps) {
+export default function GetStarted({ className }: GetStartedProps) {
   return (
-    <Section className={styles.section} type="filled">
+    <Section className={clsx(styles.section, className)} type="filled">
       <CardTitle showTitle={false} cardNumber="03" cardTitle="Get started" />
 
       <p className={styles.text}>What can The INFIN do for you?</p>

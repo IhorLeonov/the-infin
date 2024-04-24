@@ -5,12 +5,14 @@ import { Title } from '../atoms/Title';
 import Description from '../molecules/Description';
 import ImageWithButton from '../molecules/ImageWithButton';
 import { CardTitle } from '../molecules/CardTitle';
+import { CardProps } from '@/lib/types';
+import clsx from 'clsx';
 
-interface IndividualsProps {}
+interface IndividualsProps extends CardProps {}
 
-export default function Individuals({}: IndividualsProps) {
+export default function Individuals({ className }: IndividualsProps) {
   return (
-    <Section className={styles.section} type="filled">
+    <Section className={clsx(styles.section, className)} type="filled">
       <ImageWithButton
         className={styles.imageWithButton}
         imageSrc="/images/individuals.png"

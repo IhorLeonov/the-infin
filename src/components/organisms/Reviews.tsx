@@ -9,12 +9,14 @@ import { reviews } from '@/lib/constants';
 
 import PlusIcon from '../../../public/icons/plus.svg';
 import ReviewList from '../molecules/ReviewList';
+import { CardProps } from '@/lib/types';
+import clsx from 'clsx';
 
-interface ReviewsProps {}
+interface ReviewsProps extends CardProps {}
 
-export default function Reviews({}: ReviewsProps) {
+export default function Reviews({ className }: ReviewsProps) {
   return (
-    <Section className={styles.section} type="filled">
+    <Section className={clsx(styles.section, className)} type="filled">
       <div className={styles.firstBlock}>
         <CardTitle
           className={styles.cardTitle}

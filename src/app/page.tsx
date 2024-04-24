@@ -16,10 +16,10 @@ export default function HomePage() {
       <WhyChoose />
 
       <div className={styles.cardList}>
-        <Business />
-        <Individuals />
-        <Reviews />
-        <GetStarted />
+        <Business className={styles.card} />
+        <Individuals className={styles.card} />
+        <Reviews className={styles.card} />
+        <GetStarted className={styles.card} />
       </div>
     </div>
   );

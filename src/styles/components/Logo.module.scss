@@ -1,8 +1,12 @@
+@import '../mixins';
+
 .logoBox {
   max-width: 1380px;
   max-height: 242px;
 
   svg {
+    @include transition;
+
     max-width: 100%;
 
     width: auto;

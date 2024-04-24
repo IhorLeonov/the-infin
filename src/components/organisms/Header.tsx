@@ -8,7 +8,7 @@ interface HeaderProps {}
 export default function Header({}: HeaderProps) {
   return (
     <header className={styles.header}>
-      <Logo style={{ maxWidth: 514, maxHeight: 90 }} />
+      <Logo className={styles.logo} />
 
       <nav className={styles.nav}>
         <a href="#home">

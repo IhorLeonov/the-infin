@@ -5,12 +5,14 @@ import Description from '../molecules/Description';
 import { Title } from '../atoms/Title';
 import styles from '../../styles/components/Business.module.scss';
 import { CardTitle } from '../molecules/CardTitle';
+import clsx from 'clsx';
+import { CardProps } from '@/lib/types';
 
-interface BusinessProps {}
+interface BusinessProps extends CardProps {}
 
-export default function Business({}: BusinessProps) {
+export default function Business({ className }: BusinessProps) {
   return (
-    <Section className={styles.section} type="filled">
+    <Section className={clsx(styles.section, className)} type="filled">
       <div className={styles.box}>
         <CardTitle
           className={styles.cardTitle}
