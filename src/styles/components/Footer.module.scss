@@ -2,9 +2,9 @@
 
 .footer {
   position: relative;
-  margin-top: 116px;
+  margin-top: 86px;
   padding: 30px;
-  height: calc(100vh - 116px);
+  height: calc(100vh - 66px);
 }
 
 .topBlock {
@@ -66,6 +66,10 @@
 }
 
 @media screen and (max-width: 920px) {
+  .footer {
+    min-height: calc(100vh - 66px);
+  }
+
   .topBlock {
     display: block;
   }

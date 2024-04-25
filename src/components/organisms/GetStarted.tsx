@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React from 'react';
 import styles from '../../styles/components/GetStarted.module.scss';
 import Image from 'next/image';
 import clsx from 'clsx';
@@ -14,20 +14,9 @@ import girlImage from '../../../public/images/girl1.jpeg';
 import boyImage from '../../../public/images/boy1.jpg';
 import PlusesIcon from '../../../public/icons/plusGroup.svg';
 
-import { useScroll, useTransform, motion } from 'framer-motion';
-
 interface GetStartedProps extends CardProps {}
 
 export default function GetStarted({ className }: GetStartedProps) {
-  const containerRef = useRef(null);
-
-  // const { scrollYProgress } = useScroll({
-  //   target: containerRef,
-  //   offset: ['start end', 'end start'],
-  // });
-
-  // const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
-
   return (
     <Section className={clsx(styles.section, className)} type="filled">
       <CardTitle showTitle={false} cardNumber="03" cardTitle="Get started" />
@@ -39,31 +28,24 @@ export default function GetStarted({ className }: GetStartedProps) {
         Schedule a live demo
       </Button>
 
-      <div
-        className={clsx(styles.imageContainer, styles.girlImageContainer)}
-        ref={containerRef}
-      >
-        <motion.div style={{}}>
-          <Image
-            className={styles.image}
-            src={girlImage}
-            width={223}
-            height={223}
-            alt="girl"
-          />
-        </motion.div>
+      <div className={clsx(styles.imageContainer, styles.girlImageContainer)}>
+        <Image
+          className={styles.image}
+          src={girlImage}
+          width={223}
+          height={223}
+          alt="girl"
+        />
       </div>
 
       <div className={clsx(styles.imageContainer, styles.boyImageContainer)}>
-        <motion.div style={{}}>
-          <Image
-            className={styles.image}
-            src={boyImage}
-            width={223}
-            height={223}
-            alt="boy"
-          />
-        </motion.div>
+        <Image
+          className={styles.image}
+          src={boyImage}
+          width={223}
+          height={223}
+          alt="boy"
+        />
       </div>
 
       <PlusesIcon className={styles.plusesLeft} />

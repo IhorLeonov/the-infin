@@ -14,6 +14,25 @@
   transition: all 0.4s;
 }
 
+@mixin main-button {
+  display: inline-block;
+  padding: 12px;
+
+  width: 223px;
+  height: 90px;
+
+  text-align: center;
+  border: none;
+  border-radius: 129px;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+
+  transition: all 0.4s;
+}
+
 @mixin cursor-default {
   cursor: url('/icons/cursor.svg'), default;
 }
