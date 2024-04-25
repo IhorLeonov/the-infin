@@ -2,11 +2,22 @@
 
 .hero {
   position: relative;
-  padding-top: 136px;
+  padding-top: calc(136px + 126px);
 }
 
 .topBlock {
   display: flex;
+}
+
+.imageContainer {
+  border-radius: 20px;
+
+  overflow: hidden;
+  max-width: 201px;
+}
+
+.image {
+  border-radius: 20px;
 }
 
 .bottomBlock {
@@ -29,10 +40,6 @@
 .description {
   width: 113px;
   margin-right: 25px;
-}
-
-.image {
-  border-radius: 20px;
 }
 
 .description {

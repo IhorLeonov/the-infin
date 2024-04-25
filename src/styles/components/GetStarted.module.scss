@@ -42,16 +42,28 @@
   }
 }
 
-.girlImage {
+.imageContainer {
+  border-radius: 20px;
+  width: 223px;
+  height: 223px;
+
+  overflow: hidden;
+}
+
+.girlImageContainer {
   position: absolute;
   left: 30px;
   top: 30px;
 }
 
-.boyImage {
+.boyImageContainer {
   position: absolute;
   right: 30px;
   bottom: 30px;
+}
+
+.image {
+  border-radius: 20px;
 }
 
 .plusesLeft {
@@ -69,8 +81,8 @@
 }
 
 @media screen and (max-width: 1320px) {
-  .girlImage,
-  .boyImage {
+  .girlImageContainer,
+  .boyImageContainer {
     display: none;
   }
 }

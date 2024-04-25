@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef } from 'react';
 import styles from '../../styles/components/Hero.module.scss';
 import Image from 'next/image';
 import { Section } from '../atoms/Section';
@@ -8,13 +8,24 @@ import { Title } from '../atoms/Title';
 import { Button } from '../atoms/Button';
 import { AppContext, IAppContext } from '@/context/app.context';
 
+import { useScroll, useTransform, motion } from 'framer-motion';
+
 interface HeroProps {}
 
 export default function Hero({}: HeroProps) {
   const { setCursorVisibility } = useContext(AppContext) as IAppContext;
 
+  const container = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: container,
+  });
+
+  const y = useTransform(scrollYProgress, [0, 0.4], ['0', '150px']);
+
   return (
     <Section
+      ref={container}
       className={styles.hero}
       type="ghost"
       onMouseLeave={() => setCursorVisibility('none')}
@@ -25,14 +36,18 @@ export default function Hero({}: HeroProps) {
           Web +<br /> Mobile app
         </Title>
 
-        <Image
-          className={styles.image}
-          src="/images/hand-phone.png"
-          width={201}
-          height={160}
-          alt="hand with phone"
-          priority
-        />
+        <div className={styles.imageContainer}>
+          <motion.div style={{ y }}>
+            <Image
+              className={styles.image}
+              src="/images/hand-phone.png"
+              width={201}
+              height={160}
+              alt="hand with phone"
+              priority
+            />
+          </motion.div>
+        </div>
       </div>
 
       <div className={styles.bottomBlock}>

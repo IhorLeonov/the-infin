@@ -1,8 +1,11 @@
-@import "../variables";
+@import '../variables';
 
 .wrapper {
   position: relative;
   margin-top: 130px;
+
+  border-radius: 30px;
+  overflow: hidden;
 }
 
 .button {

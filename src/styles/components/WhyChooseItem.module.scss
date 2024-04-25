@@ -17,9 +17,25 @@
   width: 432px;
 }
 
+.imageContainer {
+  position: relative;
+
+  border-radius: 20px;
+  width: 223px;
+  height: 223px;
+
+  overflow: hidden;
+}
+
 .image {
+  position: relative;
+  // top: -10px;
+
   border-radius: 20px;
   margin-left: auto;
+
+  object-position: top;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 1300px) {

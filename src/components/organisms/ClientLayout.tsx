@@ -15,11 +15,11 @@ interface ClientLayotProps {
 
 export default function ClientLayout({ children }: ClientLayotProps) {
   const { cursorVisibility } = useContext(AppContext) as IAppContext;
-  const [showAll, setShowAll] = useState<boolean>(false);
+  const [showAll, setShowAll] = useState<boolean>(true);
 
   return (
     <>
-      <WelcomeAnimation setShowAll={setShowAll} />
+      {/* <WelcomeAnimation setShowAll={setShowAll} /> */}
       {showAll && (
         <div className={styles.wrapper}>
           <Cursor cursorDisplay={cursorVisibility} />
