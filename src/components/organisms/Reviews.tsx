@@ -31,7 +31,11 @@ export default function Reviews({ className }: ReviewsProps) {
   }, [isInView]);
 
   return (
-    <Section className={clsx(styles.section, className)} type="filled">
+    <Section
+      className={clsx(styles.section, className)}
+      type="filled"
+      id="reviews"
+    >
       <div className={styles.firstBlock}>
         <CardTitle
           className={styles.cardTitle}

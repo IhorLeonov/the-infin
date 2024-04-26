@@ -12,7 +12,11 @@ interface IndividualsProps extends CardProps {}
 
 export default function Individuals({ className }: IndividualsProps) {
   return (
-    <Section className={clsx(styles.section, className)} type="filled">
+    <Section
+      className={clsx(styles.section, className)}
+      type="filled"
+      id="individuals"
+    >
       <ImageWithButton
         className={styles.imageWithButton}
         imageSrc="/images/individuals.png"

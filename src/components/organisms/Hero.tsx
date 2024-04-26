@@ -15,6 +15,7 @@ export default function Hero({}: HeroProps) {
 
   return (
     <Section
+      id="home"
       className={styles.hero}
       type="ghost"
       onMouseLeave={() => setCursorVisibility('none')}

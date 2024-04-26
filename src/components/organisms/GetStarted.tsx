@@ -28,6 +28,7 @@ export default function GetStarted({ className }: GetStartedProps) {
       className={clsx(styles.section, className)}
       type="filled"
       style={{ paddingBottom: 160 }}
+      id="getstarted"
     >
       <CardTitle showTitle={false} cardNumber="03" cardTitle="Get started" />
 

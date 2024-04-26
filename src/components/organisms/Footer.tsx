@@ -22,47 +22,52 @@ export default function Footer({}: FooterProps) {
             <Title tag="h3" className={styles.title}>
               Pages
             </Title>
-            <p>Home</p>
-            <p>For Businesses</p>
-            <p>For Individuals</p>
-            <p>Blog</p>
-            <p>Marketing Efforts</p>
+
+            <a href="#home">Home</a>
+            <a href="#business">For Businesses</a>
+            <a href="#individuals">For Individuals</a>
+            <a href="#reviews">Blog</a>
+            <a href="#getstarted">Marketing&nbsp;Efforts</a>
           </li>
 
           <li className={styles.listItem}>
             <Title tag="h3" className={styles.title}>
               For Business
             </Title>
-            <p>Label link 1</p>
-            <p>Label link 2</p>
-            <p>Label link 3</p>
+
+            <a>Label link 1</a>
+            <a>Label link 2</a>
+            <a>Label link 3</a>
           </li>
 
           <li className={styles.listItem}>
             <Title tag="h3" className={styles.title}>
               For Individuals
             </Title>
-            <p>Label link 1</p>
-            <p>Label link 2</p>
-            <p>Label link 3</p>
+
+            <a>Label link 1</a>
+            <a>Label link 2</a>
+            <a>Label link 3</a>
           </li>
 
           <li className={styles.listItem}>
             <Title tag="h3" className={styles.title}>
               Contact
             </Title>
-            <p>For Businesses</p>
-            <p>For Individuals</p>
+
+            <a>For Businesses</a>
+            <a>For Individuals</a>
           </li>
 
           <li className={styles.listItem}>
             <Title tag="h3" className={styles.title}>
               Social Media
             </Title>
-            <p>Instagram</p>
-            <p>LinkedIn</p>
-            <p>Facebook</p>
-            <p>Twitter</p>
+
+            <a>Instagram</a>
+            <a>LinkedIn</a>
+            <a>Facebook</a>
+            <a>Twitter</a>
           </li>
         </ul>
       </div>

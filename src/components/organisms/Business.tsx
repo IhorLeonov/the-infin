@@ -26,7 +26,11 @@ export default function Business({ className }: BusinessProps) {
   }, [isInView]);
 
   return (
-    <Section className={clsx(styles.section, className)} type="filled">
+    <Section
+      className={clsx(styles.section, className)}
+      type="filled"
+      id="business"
+    >
       <div className={styles.box} ref={target}>
         <CardTitle
           className={styles.cardTitle}
