@@ -3,16 +3,22 @@ import styles from '../../styles/components/Logo.module.scss';
 import clsx from 'clsx';
 
 export interface LogoProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  fill?: string;
+}
 
-export default function Logo({ className, ...props }: LogoProps) {
+export default function Logo({
+  fill = '#121212',
+  className,
+  ...props
+}: LogoProps) {
   return (
     <div className={clsx(styles.logoBox, className)} {...props}>
       <svg
         width="1380"
         height="242"
         viewBox="0 0 1380 242"
-        fill="#121212"
+        fill={fill}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path d="M37.3449 18.9045H37.2188V18.7783L37.3449 18.9045Z" />

@@ -19,11 +19,17 @@
   padding-left: 104px;
 }
 
-.pluses {
+.plusesContainer {
   position: absolute;
   left: 18px;
   bottom: 30px;
 }
+
+// .pluses {
+//   position: absolute;
+//   left: 18px;
+//   bottom: 30px;
+// }
 
 @media screen and (max-width: 950px) {
   .section {

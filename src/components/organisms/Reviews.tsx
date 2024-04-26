@@ -1,20 +1,35 @@
-import React from 'react';
+'use client';
+
+import React, { useContext, useEffect, useRef } from 'react';
 import styles from '../../styles/components/Reviews.module.scss';
+import clsx from 'clsx';
 
 import { Section } from '../atoms/Section';
 import { Title } from '../atoms/Title';
 import { Divider } from '../atoms/Divider';
 import { CardTitle } from '../molecules/CardTitle';
 import { reviews } from '@/lib/constants';
+import { CardProps } from '@/lib/types';
+import { motion } from 'framer-motion';
+import { AppContext, IAppContext } from '@/context/app.context';
 
 import PlusIcon from '../../../public/icons/plus.svg';
 import ReviewList from '../molecules/ReviewList';
-import { CardProps } from '@/lib/types';
-import clsx from 'clsx';
+import useTargetInView from '@/hooks/useTargetInView';
 
 interface ReviewsProps extends CardProps {}
 
 export default function Reviews({ className }: ReviewsProps) {
+  const { setActiveSaction } = useContext(AppContext) as IAppContext;
+
+  const targetBottom = useRef(null);
+
+  const { isInView } = useTargetInView(targetBottom);
+
+  useEffect(() => {
+    isInView ? setActiveSaction('reviews') : setActiveSaction('other');
+  }, [isInView]);
+
   return (
     <Section className={clsx(styles.section, className)} type="filled">
       <div className={styles.firstBlock}>
@@ -30,13 +45,18 @@ export default function Reviews({ className }: ReviewsProps) {
           <span className={styles.titleAccent}>Objective</span>
         </Title>
 
-        <div className={styles.pluses}>
+        <motion.div
+          className={styles.pluses}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isInView ? 1 : 0 }}
+          transition={{ duration: 2 }}
+        >
           <PlusIcon className={styles.plusIcon} />
           <PlusIcon className={styles.plusIcon} />
           <PlusIcon className={styles.plusIcon} />
-        </div>
+        </motion.div>
 
-        <div className={styles.description}>
+        <div className={styles.description} ref={targetBottom}>
           <p>
             The INFIN’s data is an objective, flexible, dynamic, and real-time
             alternative to the limited and speculative information normally

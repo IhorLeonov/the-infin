@@ -1,38 +1,26 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useRef } from 'react';
 import styles from '../../styles/components/Header.module.scss';
 
 import Logo from '../atoms/Logo';
 import { Variants, motion, useInView } from 'framer-motion';
 import useCheckIsMobile from '@/hooks/useCheckIsMobile.ts';
+import useTargetInView from '@/hooks/useTargetInView';
+import { AppContext, IAppContext } from '@/context/app.context';
 
 interface HeaderProps {}
 
 export default function Header({}: HeaderProps) {
-  const [isShortHeader, setIsShortHeader] = useState<boolean>(false);
-  const { isMobile } = useCheckIsMobile();
-
   const ref = useRef(null);
-  const isInView = useInView(ref);
 
-  useEffect(() => {
-    setIsShortHeader(!isInView);
-  }, [isInView]);
-
-  const variantsHeader = {
-    short: {},
-    large: {},
-  };
+  const { isMobile } = useCheckIsMobile();
+  const { isInView } = useTargetInView(ref);
+  const { activeSection } = useContext(AppContext) as IAppContext;
 
   const variantsLogo = {
     short: { maxWidth: 285 },
     large: { maxWidth: 514 },
-  };
-
-  const variantsNav = {
-    short: {},
-    large: {},
   };
 
   const variantsButton = {
@@ -57,24 +45,26 @@ export default function Header({}: HeaderProps) {
       <motion.header
         className={styles.header}
         layout
-        variants={variantsHeader}
         initial={'large'}
-        animate={isShortHeader ? 'short' : 'large'}
+        animate={!isInView ? 'short' : 'large'}
         style={{ position: isMobile ? 'static' : 'fixed' }}
       >
         <motion.div
           variants={variantsLogo}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          <Logo className={styles.logo} />
+          <Logo
+            className={styles.logo}
+            fill={activeSection === 'reviews' ? '#ffcd00' : '#121212'}
+          />
         </motion.div>
 
-        <motion.nav className={styles.nav} variants={variantsNav}>
+        <nav className={styles.nav}>
           <motion.a
             href="#home"
             className={styles.link}
             variants={variantsLink(1)}
-            transition={{ duration: 0, delay: !isShortHeader ? 0.5 : 0.1 }}
+            transition={{ duration: 0, delay: isInView ? 0.5 : 0.1 }}
           >
             <p className={styles.p}>Home</p>
           </motion.a>
@@ -83,7 +73,7 @@ export default function Header({}: HeaderProps) {
             href="#business"
             className={styles.link}
             variants={variantsLink(2)}
-            transition={{ duration: 0, delay: !isShortHeader ? 0.4 : 0.2 }}
+            transition={{ duration: 0, delay: isInView ? 0.4 : 0.2 }}
           >
             <p className={styles.p}>For Businesses</p>
           </motion.a>
@@ -101,7 +91,7 @@ export default function Header({}: HeaderProps) {
             href="#reviews"
             className={styles.link}
             variants={variantsLink(4)}
-            transition={{ duration: 0, delay: !isShortHeader ? 0.2 : 0.4 }}
+            transition={{ duration: 0, delay: isInView ? 0.2 : 0.4 }}
           >
             <p className={styles.p}>Capitalism 2.0</p>
           </motion.a>
@@ -110,15 +100,14 @@ export default function Header({}: HeaderProps) {
             href="#getstarted"
             className={styles.link}
             variants={variantsLink(5)}
-            transition={{ duration: 0, delay: !isShortHeader ? 0.1 : 0.5 }}
+            transition={{ duration: 0, delay: isInView ? 0.1 : 0.5 }}
           >
             <p className={styles.p}>Marketing Efforts</p>
           </motion.a>
-        </motion.nav>
+        </nav>
 
         <motion.button
           className={styles.button}
-          // onClick={() => setIsShortHeader(!isShortHeader)}
           variants={variantsButton}
           transition={{ duration: 0.4 }}
         >

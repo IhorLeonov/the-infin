@@ -1,19 +1,33 @@
-import React from 'react';
+'use client';
+
+import React, { useContext, useEffect, useRef } from 'react';
+import styles from '../../styles/components/Business.module.scss';
+import clsx from 'clsx';
+
 import { Section } from '../atoms/Section';
 import ImageWithButton from '../molecules/ImageWithButton';
 import Description from '../molecules/Description';
 import { Title } from '../atoms/Title';
-import styles from '../../styles/components/Business.module.scss';
 import { CardTitle } from '../molecules/CardTitle';
-import clsx from 'clsx';
 import { CardProps } from '@/lib/types';
+import useTargetInView from '@/hooks/useTargetInView';
+import { AppContext, IAppContext } from '@/context/app.context';
 
 interface BusinessProps extends CardProps {}
 
 export default function Business({ className }: BusinessProps) {
+  const { setActiveSaction } = useContext(AppContext) as IAppContext;
+
+  const target = useRef(null);
+  const { isInView } = useTargetInView(target);
+
+  useEffect(() => {
+    isInView ? setActiveSaction('business') : setActiveSaction('other');
+  }, [isInView]);
+
   return (
     <Section className={clsx(styles.section, className)} type="filled">
-      <div className={styles.box}>
+      <div className={styles.box} ref={target}>
         <CardTitle
           className={styles.cardTitle}
           showTitle={false}

@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
 import styles from '../../styles/components/WhyChoose.module.scss';
 
 import { Section } from '../atoms/Section';
@@ -6,10 +8,15 @@ import { Title } from '../atoms/Title';
 
 import WhyChooseItem from '../molecules/WhyChooseItem';
 import PlusesIcon from '../../../public/icons/plusGroup.svg';
+import useTargetInView from '@/hooks/useTargetInView';
+import { motion } from 'framer-motion';
 
 interface WhyChooseProps {}
 
 export default function WhyChoose({}: WhyChooseProps) {
+  const targetRef = useRef(null);
+  const { isInView } = useTargetInView(targetRef);
+
   return (
     <Section className={styles.section} type="ghost">
       <Title className={styles.title} tag="h2">
@@ -29,7 +36,15 @@ export default function WhyChoose({}: WhyChooseProps) {
         />
       </ul>
 
-      <PlusesIcon className={styles.pluses} />
+      <motion.div
+        className={styles.plusesContainer}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isInView ? 1 : 0 }}
+        transition={{ duration: 2 }}
+      >
+        <PlusesIcon className={styles.pluses} />
+        <div ref={targetRef} />
+      </motion.div>
     </Section>
   );
 }

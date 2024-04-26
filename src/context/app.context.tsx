@@ -3,14 +3,24 @@
 import { TypeCursorVisibility } from '@/lib/types';
 import { ReactNode, createContext, useState } from 'react';
 
+export type TypeActiveSection =
+  | 'business'
+  | 'individuals'
+  | 'reviews'
+  | 'other'
+  | 'undefined';
+
 export interface IAppContext {
   cursorVisibility: TypeCursorVisibility;
   setCursorVisibility: (cursorDisplay: TypeCursorVisibility) => void;
+  activeSection?: TypeActiveSection;
+  setActiveSaction: (value: TypeActiveSection) => void;
 }
 
 export const AppContext = createContext<IAppContext>({
   cursorVisibility: 'none',
   setCursorVisibility: () => {},
+  setActiveSaction: () => {},
 });
 
 export const AppContextProvider = ({
@@ -24,9 +34,19 @@ export const AppContextProvider = ({
     setCursorDisplay(cursorDisplay);
   };
 
+  const [section, setSection] = useState<TypeActiveSection>('other');
+  const setActiveSaction = (value: TypeActiveSection) => {
+    setSection(value);
+  };
+
   return (
     <AppContext.Provider
-      value={{ cursorVisibility: cursorDisplay, setCursorVisibility }}
+      value={{
+        cursorVisibility: cursorDisplay,
+        setCursorVisibility,
+        activeSection: section,
+        setActiveSaction,
+      }}
     >
       {children}
     </AppContext.Provider>
