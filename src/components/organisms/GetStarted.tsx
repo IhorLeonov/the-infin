@@ -24,7 +24,11 @@ export default function GetStarted({ className }: GetStartedProps) {
   const { isInView } = useTargetInView(target);
 
   return (
-    <Section className={clsx(styles.section, className)} type="filled">
+    <Section
+      className={clsx(styles.section, className)}
+      type="filled"
+      style={{ paddingBottom: 160 }}
+    >
       <CardTitle showTitle={false} cardNumber="03" cardTitle="Get started" />
 
       <p className={styles.text}>What can The INFIN do for you?</p>
