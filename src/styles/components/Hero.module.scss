@@ -2,7 +2,8 @@
 
 .hero {
   position: relative;
-  padding-top: calc(136px + 126px);
+  padding-top: calc(136px + 106px);
+  min-height: 100vh;
 }
 
 .topBlock {

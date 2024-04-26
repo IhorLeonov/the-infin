@@ -24,7 +24,7 @@ const neueHaasGrotesk = localFont({
 
 export const metadata: Metadata = {
   title: 'The Infin',
-  description: 'The Infin landing page',
+  description: 'The official landing page, built with Next.js',
 };
 
 export default function RootLayout({
@@ -35,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={neueHaasGrotesk.className}>
+        <link rel="icon" href="/images/icon.png" sizes="any" />
         <AppContextProvider>
           <ClientLayout>{children}</ClientLayout>
         </AppContextProvider>

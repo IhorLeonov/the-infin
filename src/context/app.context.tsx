@@ -1,14 +1,7 @@
 'use client';
 
-import { TypeCursorVisibility } from '@/lib/types';
+import { TypeActiveSection, TypeCursorVisibility } from '@/lib/types';
 import { ReactNode, createContext, useState } from 'react';
-
-export type TypeActiveSection =
-  | 'business'
-  | 'individuals'
-  | 'reviews'
-  | 'other'
-  | 'undefined';
 
 export interface IAppContext {
   cursorVisibility: TypeCursorVisibility;

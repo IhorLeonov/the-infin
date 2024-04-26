@@ -40,7 +40,7 @@ export default function WhyChoose({}: WhyChooseProps) {
         className={styles.plusesContainer}
         initial={{ opacity: 0 }}
         animate={{ opacity: isInView ? 1 : 0 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: 3 }}
       >
         <PlusesIcon className={styles.pluses} />
         <div ref={targetRef} />

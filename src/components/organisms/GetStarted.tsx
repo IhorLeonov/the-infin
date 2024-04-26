@@ -11,8 +11,8 @@ import { Button } from '../atoms/Button';
 import { CardProps } from '@/lib/types';
 import { motion } from 'framer-motion';
 
-import girlImage from '../../../public/images/girl1.jpeg';
-import boyImage from '../../../public/images/boy1.jpg';
+import girlImage from '../../../public/images/girl.jpeg';
+import boyImage from '../../../public/images/boy.jpg';
 import PlusesIcon from '../../../public/icons/plusGroup.svg';
 import useTargetInView from '@/hooks/useTargetInView';
 
@@ -59,7 +59,7 @@ export default function GetStarted({ className }: GetStartedProps) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isInView ? 1 : 0 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: 3 }}
       >
         <PlusesIcon className={styles.plusesLeft} />
         <PlusesIcon className={styles.plusesRight} />
