@@ -23,7 +23,6 @@
   display: flex;
   align-items: start;
   justify-content: center;
-  flex-wrap: nowrap;
 
   & svg {
     width: 100%;
@@ -41,8 +40,8 @@
   }
 }
 
-@media screen and (max-width: 640px) {
-  // .logo {
-  //   width: 290px;
-  // }
-}
+// @media screen and (max-width: 640px) {
+// .logo {
+//   width: 290px;
+// }
+// }

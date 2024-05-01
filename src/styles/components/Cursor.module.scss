@@ -4,15 +4,4 @@
 
   transform: translate(-50%, -50%);
   pointer-events: none;
-
-  svg {
-    stroke: #fff;
-  }
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(6, 38.784px);
-  grid-template-rows: repeat(5, 38.784px);
-  gap: 14px;
 }

@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import styles from '../../styles/components/Cursor.module.scss';
 import clsx from 'clsx';
-import PlusIcon from '../../../public/icons/plus.svg';
+import PlusesGrid from './PlusesGrid';
 
 export interface CursorProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -54,38 +54,7 @@ export default function Cursor({
       className={clsx(styles.cursor, className)}
       {...props}
     >
-      <div className={styles.grid}>
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-        <PlusIcon />
-      </div>
+      <PlusesGrid />
     </div>
   );
 }
