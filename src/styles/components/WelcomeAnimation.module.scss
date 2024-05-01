@@ -22,6 +22,8 @@
 
   display: flex;
   align-items: start;
+  justify-content: center;
+  flex-wrap: nowrap;
 
   & svg {
     width: 100%;
