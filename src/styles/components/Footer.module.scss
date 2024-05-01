@@ -5,7 +5,7 @@
   position: relative;
   margin-top: 86px;
   padding: 30px;
-  height: calc(100vh - 66px);
+  min-height: calc(100vh - 66px);
 }
 
 .topBlock {
