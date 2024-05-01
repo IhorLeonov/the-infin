@@ -21,7 +21,7 @@ export default function ClientLayout({ children }: ClientLayotProps) {
     <>
       <WelcomeAnimation setShowAll={setShowAll} />
       {showAll && (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} style={{ opacity: showAll ? 1 : 0 }}>
           <Cursor cursorDisplay={cursorVisibility} />
           <Header />
           <main>{children}</main>
