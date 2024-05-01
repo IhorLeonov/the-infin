@@ -18,16 +18,17 @@ export default function ClientLayout({ children }: ClientLayotProps) {
   const { cursorVisibility } = useContext(AppContext) as IAppContext;
   const [showAll, setShowAll] = useState<boolean>(false);
   const { isTablet } = useCheckIsMobile();
-
   return (
     <>
       <WelcomeAnimation setShowAll={setShowAll} />
-      <div style={{ opacity: showAll ? 1 : 0 }}>
-        {!isTablet && <Cursor cursorDisplay={cursorVisibility} />}
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </div>
+      {showAll && (
+        <div className={styles.wrapper}>
+          {!isTablet && <Cursor cursorDisplay={cursorVisibility} />}
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </div>
+      )}
     </>
   );
 }
