@@ -8,6 +8,7 @@ import Footer from './Footer';
 import WelcomeAnimation from './WelcomeAnimation';
 import Cursor from '../atoms/Cursor';
 import { AppContext, IAppContext } from '@/context/app.context';
+import useCheckIsMobile from '@/hooks/useCheckIsMobile.ts';
 
 interface ClientLayotProps {
   children: React.ReactNode;
@@ -16,18 +17,17 @@ interface ClientLayotProps {
 export default function ClientLayout({ children }: ClientLayotProps) {
   const { cursorVisibility } = useContext(AppContext) as IAppContext;
   const [showAll, setShowAll] = useState<boolean>(false);
+  const { isTablet } = useCheckIsMobile();
 
   return (
     <>
       <WelcomeAnimation setShowAll={setShowAll} />
-      {showAll && (
-        <div className={styles.wrapper} style={{ opacity: showAll ? 1 : 0 }}>
-          <Cursor cursorDisplay={cursorVisibility} />
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </div>
-      )}
+      <div style={{ opacity: showAll ? 1 : 0 }}>
+        {!isTablet && <Cursor cursorDisplay={cursorVisibility} />}
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </div>
     </>
   );
 }
