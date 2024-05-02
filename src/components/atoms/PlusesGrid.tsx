@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 import styles from '../../styles/components/PlusesGrid.module.scss';
+import clsx from 'clsx';
 
 import PlusIcon from '../../../public/icons/plus.svg';
 
-interface PlusesGridProps {}
+interface PlusesGridProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
 
-export default function PlusesGrid({}: PlusesGridProps) {
+export default function PlusesGrid({ className, ...props }: PlusesGridProps) {
   return (
-    <div className={styles.grid}>
+    <div className={clsx(styles.grid, className)} {...props}>
       <PlusIcon />
       <PlusIcon />
       <PlusIcon />

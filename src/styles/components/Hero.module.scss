@@ -4,6 +4,8 @@
   position: relative;
   padding-top: calc(136px + 106px);
   min-height: 100vh;
+
+  overflow-x: hidden;
 }
 
 .topBlock {
@@ -26,7 +28,13 @@
   margin-top: 128px;
 }
 
+.titleBox {
+  position: relative;
+  display: inline-block;
+}
+
 .title {
+  max-width: 894px;
   background-color: $grey;
 
   &::selection {
@@ -35,6 +43,15 @@
   &::-moz-selection {
     background: $accent;
   }
+}
+
+.plusesGrid {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+
+  transform: translate(48%, -60%);
 }
 
 .smallTitle,
@@ -46,10 +63,8 @@
 .description {
   font-size: 12px;
   line-height: 16px;
-}
 
-.title {
-  max-width: 894px;
+  display: inline-block;
 }
 
 .button {
@@ -57,22 +72,29 @@
   align-self: end;
 }
 
-@media screen and (max-width: 1024px) {
-  .hero {
-    padding-top: 400px;
-  }
-}
-
 @media screen and (max-width: 1340px) {
   .topBlock,
   .bottomBlock {
-    flex-direction: column;
-    gap: 20px;
+    display: block;
+    // flex-direction: column;
+    // gap: 20px;
+  }
+
+  .imageContainer,
+  .titleBox {
+    margin-top: 20px;
   }
 
   .button {
-    margin-left: 0;
+    margin-top: 30px; //
+    // margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hero {
+    padding-top: 400px;
   }
 }
 

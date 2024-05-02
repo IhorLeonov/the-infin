@@ -2,24 +2,31 @@
 
 import React, { useContext, useRef } from 'react';
 import styles from '../../styles/components/Hero.module.scss';
-import Image from 'next/image';
+
 import { Section } from '../atoms/Section';
 import { Title } from '../atoms/Title';
 import { Button } from '../atoms/Button';
-import { AppContext, IAppContext } from '@/context/app.context';
+// import { AppContext, IAppContext } from '@/context/app.context';
+
+import Image from 'next/image';
+import PlusesGrid from '../atoms/PlusesGrid';
+import { motion } from 'framer-motion';
+import useTargetInView from '@/hooks/useTargetInView';
 
 interface HeroProps {}
 
 export default function Hero({}: HeroProps) {
-  const { setCursorVisibility } = useContext(AppContext) as IAppContext;
+  // const { setCursorVisibility } = useContext(AppContext) as IAppContext;
+  const targetRef = useRef(null);
+  const { isInView } = useTargetInView(targetRef);
 
   return (
     <Section
       id="home"
       className={styles.hero}
       type="ghost"
-      onMouseLeave={() => setCursorVisibility('none')}
-      onMouseOver={() => setCursorVisibility('block')}
+      // onMouseLeave={() => setCursorVisibility('none')}
+      // onMouseOver={() => setCursorVisibility('block')}
     >
       <div className={styles.topBlock}>
         <Title className={styles.smallTitle} tag="h3">
@@ -43,9 +50,20 @@ export default function Hero({}: HeroProps) {
           A market-based assessment of your contribution.
         </span>
 
-        <Title tag="h1" className={styles.title}>
-          To know your true value,  Help others understand theirs.
-        </Title>
+        <div className={styles.titleBox}>
+          <Title tag="h1" className={styles.title}>
+            To know your true value,  Help others understand theirs.
+          </Title>
+          <div ref={targetRef} />
+          <motion.div
+            className={styles.plusesGrid}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isInView ? 1 : 0 }}
+            transition={{ duration: 3 }}
+          >
+            <PlusesGrid />
+          </motion.div>
+        </div>
 
         <Button className={styles.button} appearance="primary">
           Schedule a demo
