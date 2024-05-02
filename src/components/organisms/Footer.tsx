@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from '../../styles/components/Footer.module.scss';
-import { Title } from '../atoms/Title';
 
+import { Title } from '../atoms/Title';
 import ThinksebIcon from '../../../public/icons/thinkseb.svg';
-import Logo from '../atoms/Logo';
+import Logo from '../atoms/LogoIcon';
 
 interface FooterProps {}
 

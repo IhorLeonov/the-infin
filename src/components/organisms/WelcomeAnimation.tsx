@@ -11,11 +11,11 @@ import IIcon from '../../../public/icons/logo/i';
 import TheIcon from '../../../public/icons/logo/the';
 
 interface WelcomeAnimationProps {
-  setShowAll: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowAllDom: (value: boolean) => void;
 }
 
 export default function WelcomeAnimation({
-  setShowAll,
+  setShowAllDom,
 }: WelcomeAnimationProps) {
   const [mounted, setMounted] = useState(false);
 
@@ -27,12 +27,12 @@ export default function WelcomeAnimation({
     document.body.style.overflow = 'hidden';
 
     setTimeout(() => {
-      setShowAll(true);
-    }, 2000);
+      setShowAllDom(true);
+    }, 1500);
 
     setTimeout(() => {
       document.body.style.overflow = 'scroll';
-    }, 5000);
+    }, 3000);
   }, []);
 
   return (
@@ -41,14 +41,14 @@ export default function WelcomeAnimation({
         className={styles.wrapper}
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
-        transition={{ duration: 1, delay: 4 }}
+        transition={{ duration: 0.7, delay: 2.3 }}
       >
         <motion.div className={styles.logo}>
           <motion.div
             className={styles.the}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
+            transition={{ duration: 0.7, delay: 0.7 }}
           >
             <TheIcon />
           </motion.div>
@@ -56,7 +56,7 @@ export default function WelcomeAnimation({
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2 }}
+            transition={{ duration: 0.7, delay: 1.4 }}
           >
             <IIcon />
           </motion.div>
@@ -64,7 +64,7 @@ export default function WelcomeAnimation({
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1, rotate: 360 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.7 }}
           >
             <NIcon />
           </motion.div>
@@ -72,7 +72,7 @@ export default function WelcomeAnimation({
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 3 }}
+            transition={{ duration: 0.7, delay: 2.1 }}
           >
             <FinIcon />
           </motion.div>

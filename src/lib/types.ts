@@ -10,9 +10,11 @@ export type TypeCursorVisibility = 'block' | 'none';
 export interface CardProps {
   className: string;
 }
+
 export type TypeActiveSection =
+  | 'image'
   | 'business'
   | 'individuals'
   | 'reviews'
-  | 'other'
+  | 'getstarted'
   | 'undefined';

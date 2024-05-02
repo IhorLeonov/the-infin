@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import styles from '../../styles/components/GetStarted.module.scss';
 import Image from 'next/image';
 import clsx from 'clsx';
@@ -15,13 +15,28 @@ import girlImage from '../../../public/images/girl.jpeg';
 import boyImage from '../../../public/images/boy.jpg';
 import PlusesIcon from '../../../public/icons/plusGroup.svg';
 import useTargetInView from '@/hooks/useTargetInView';
+import { AppContext, IAppContext } from '@/context/app.context';
 
 interface GetStartedProps extends CardProps {}
 
 export default function GetStarted({ className }: GetStartedProps) {
-  const target = useRef(null);
+  const { setActiveSection, removeActiveSection } = useContext(
+    AppContext,
+  ) as IAppContext;
 
-  const { isInView } = useTargetInView(target);
+  const targetMiddle = useRef(null);
+  const targetBottom = useRef(null);
+
+  const { isInView: isInViewTargetMiddle } = useTargetInView(targetMiddle);
+  const { isInView: isInViewTargetBottom } = useTargetInView(targetBottom);
+
+  useEffect(() => {
+    if (isInViewTargetBottom || isInViewTargetMiddle) {
+      setActiveSection('getstarted');
+      return;
+    }
+    removeActiveSection('getstarted');
+  }, [isInViewTargetBottom, isInViewTargetMiddle]);
 
   return (
     <Section
@@ -33,13 +48,16 @@ export default function GetStarted({ className }: GetStartedProps) {
       <CardTitle showTitle={false} cardNumber="03" cardTitle="Get started" />
 
       <p className={styles.text}>What can The INFIN do for you?</p>
-      <strong className={styles.textStrong} ref={target}>
+
+      <strong className={styles.textStrong} ref={targetMiddle}>
         Ready to get started
       </strong>
 
       <Button className={styles.button} appearance="primary">
         Schedule a live demo
       </Button>
+
+      <div ref={targetBottom} />
 
       <div className={clsx(styles.imageContainer, styles.girlImageContainer)}>
         <Image
@@ -63,7 +81,7 @@ export default function GetStarted({ className }: GetStartedProps) {
 
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: isInView ? 1 : 0 }}
+        animate={{ opacity: isInViewTargetMiddle ? 1 : 0 }}
         transition={{ duration: 3 }}
       >
         <PlusesIcon className={styles.plusesLeft} />

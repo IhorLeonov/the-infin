@@ -17,7 +17,6 @@
 .logo svg {
   max-width: 514px;
   width: 100%;
-  height: 100%;
 }
 
 .logo:hover svg {
@@ -29,7 +28,9 @@
 
   display: grid;
   grid-template-columns: repeat(5, auto);
-  grid-template-rows: repeat(5, auto);
+  grid-template-rows: repeat(1, auto);
+  align-items: center;
+  padding-bottom: 6px;
 
   & :nth-child(1),
   & :nth-child(2),
@@ -63,8 +64,23 @@
 
   &:hover,
   &:focus {
-    color: $accent;
-    border-color: $accent;
+    color: $dark;
+    background-color: $accent;
+    border-color: transparent;
+  }
+}
+
+.buttonReview {
+  color: $light;
+  border-color: $light;
+}
+
+.buttonGetStarted {
+  &:hover,
+  &:focus {
+    color: $light;
+    background-color: $dark;
+    border-color: transparent;
   }
 }
 

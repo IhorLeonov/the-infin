@@ -14,3 +14,10 @@ export const reviews = [
     job: 'CEO of Nuclear Holding Group',
   },
 ];
+
+export const colors = {
+  light: '#fff',
+  dark: '#121212',
+  accent: '#ffcd00',
+  semiDark: 'rgba(18, 18, 18, 0.16)',
+};

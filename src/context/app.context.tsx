@@ -6,14 +6,23 @@ import { ReactNode, createContext, useState } from 'react';
 export interface IAppContext {
   cursorVisibility: TypeCursorVisibility;
   setCursorVisibility: (cursorDisplay: TypeCursorVisibility) => void;
-  activeSection?: TypeActiveSection;
-  setActiveSaction: (value: TypeActiveSection) => void;
+
+  activeSection?: TypeActiveSection[];
+  setActiveSection: (value: TypeActiveSection) => void;
+  removeActiveSection: (value: TypeActiveSection) => void;
+
+  showAllDom: boolean;
+  setShowAllDom: (value: boolean) => void;
 }
 
 export const AppContext = createContext<IAppContext>({
   cursorVisibility: 'none',
   setCursorVisibility: () => {},
-  setActiveSaction: () => {},
+  activeSection: [],
+  setActiveSection: () => {},
+  removeActiveSection: () => {},
+  showAllDom: false,
+  setShowAllDom: () => {},
 });
 
 export const AppContextProvider = ({
@@ -21,15 +30,23 @@ export const AppContextProvider = ({
 }: {
   children: ReactNode;
 }): JSX.Element => {
+  const [showAll, setShowAll] = useState<boolean>(false);
+  const setShowAllDom = (value: boolean) => {
+    setShowAll(value);
+  };
+
   const [cursorDisplay, setCursorDisplay] =
     useState<TypeCursorVisibility>('none');
   const setCursorVisibility = (cursorDisplay: TypeCursorVisibility) => {
     setCursorDisplay(cursorDisplay);
   };
 
-  const [section, setSection] = useState<TypeActiveSection>('other');
-  const setActiveSaction = (value: TypeActiveSection) => {
-    setSection(value);
+  const [sections, setSections] = useState<TypeActiveSection[]>([]);
+  const setActiveSection = (value: TypeActiveSection) => {
+    setSections([...sections, value]);
+  };
+  const removeActiveSection = (value: TypeActiveSection) => {
+    setSections(sections.filter((s) => s !== value));
   };
 
   return (
@@ -37,8 +54,11 @@ export const AppContextProvider = ({
       value={{
         cursorVisibility: cursorDisplay,
         setCursorVisibility,
-        activeSection: section,
-        setActiveSaction,
+        activeSection: sections,
+        setActiveSection,
+        removeActiveSection,
+        showAllDom: showAll,
+        setShowAllDom,
       }}
     >
       {children}

@@ -20,15 +20,23 @@ import useTargetInView from '@/hooks/useTargetInView';
 interface ReviewsProps extends CardProps {}
 
 export default function Reviews({ className }: ReviewsProps) {
-  const { setActiveSaction } = useContext(AppContext) as IAppContext;
-
+  const targetMiddle = useRef(null);
   const targetBottom = useRef(null);
 
-  const { isInView } = useTargetInView(targetBottom);
+  const { isInView: isInViewTargetBottom } = useTargetInView(targetBottom);
+  const { isInView: isInViewTargetMiddle } = useTargetInView(targetMiddle);
+
+  const { setActiveSection, removeActiveSection } = useContext(
+    AppContext,
+  ) as IAppContext;
 
   useEffect(() => {
-    isInView ? setActiveSaction('reviews') : setActiveSaction('other');
-  }, [isInView]);
+    if (isInViewTargetBottom || isInViewTargetMiddle) {
+      setActiveSection('reviews');
+      return;
+    }
+    removeActiveSection('reviews');
+  }, [isInViewTargetBottom, isInViewTargetMiddle]);
 
   return (
     <Section
@@ -52,7 +60,7 @@ export default function Reviews({ className }: ReviewsProps) {
         <motion.div
           className={styles.pluses}
           initial={{ opacity: 0 }}
-          animate={{ opacity: isInView ? 1 : 0 }}
+          animate={{ opacity: isInViewTargetMiddle ? 1 : 0 }}
           transition={{ duration: 3 }}
         >
           <PlusIcon className={styles.plusIcon} />
@@ -60,7 +68,7 @@ export default function Reviews({ className }: ReviewsProps) {
           <PlusIcon className={styles.plusIcon} />
         </motion.div>
 
-        <div className={styles.description} ref={targetBottom}>
+        <div className={styles.description} ref={targetMiddle}>
           <p>
             The INFIN’s data is an objective, flexible, dynamic, and real-time
             alternative to the limited and speculative information normally
@@ -77,6 +85,7 @@ export default function Reviews({ className }: ReviewsProps) {
       </div>
 
       <ReviewList reviews={reviews} />
+      <div ref={targetBottom} />
     </Section>
   );
 }

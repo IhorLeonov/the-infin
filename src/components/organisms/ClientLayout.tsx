@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import styles from '../../styles/components/ClientLayout.module.scss';
 
 import Header from './Header';
@@ -15,13 +15,15 @@ interface ClientLayotProps {
 }
 
 export default function ClientLayout({ children }: ClientLayotProps) {
-  const { cursorVisibility } = useContext(AppContext) as IAppContext;
-  const [showAll, setShowAll] = useState<boolean>(false);
+  const { cursorVisibility, showAllDom, setShowAllDom } = useContext(
+    AppContext,
+  ) as IAppContext;
+
   const { isTablet } = useCheckIsMobile();
   return (
     <>
-      <WelcomeAnimation setShowAll={setShowAll} />
-      {showAll && (
+      <WelcomeAnimation setShowAllDom={setShowAllDom} />
+      {showAllDom && (
         <div className={styles.wrapper}>
           {!isTablet && <Cursor cursorDisplay={cursorVisibility} />}
           <Header />

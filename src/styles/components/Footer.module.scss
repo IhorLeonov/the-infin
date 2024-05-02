@@ -3,13 +3,21 @@
 
 .footer {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   margin-top: 86px;
   padding: 30px;
+  padding-top: 60px;
+  padding-bottom: 48px;
+
   min-height: calc(100vh - 66px);
 }
 
 .topBlock {
   display: flex;
+  margin-bottom: 120px;
 }
 
 .description {
@@ -48,13 +56,17 @@
 }
 
 .logo {
-  margin-top: 320px;
+  margin-top: auto;
+
+  max-width: 100%;
+  width: auto;
+  height: auto;
 }
 
 .thinkseb {
   position: absolute;
   left: 30px;
-  bottom: 30px;
+  bottom: 48px;
 
   display: flex;
   align-items: center;
@@ -72,7 +84,7 @@
   opacity: 0.4;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 820px) {
   .footer {
     min-height: calc(100vh - 66px);
   }

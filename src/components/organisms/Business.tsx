@@ -16,13 +16,15 @@ import { AppContext, IAppContext } from '@/context/app.context';
 interface BusinessProps extends CardProps {}
 
 export default function Business({ className }: BusinessProps) {
-  const { setActiveSaction } = useContext(AppContext) as IAppContext;
+  const { setActiveSection, removeActiveSection } = useContext(
+    AppContext,
+  ) as IAppContext;
 
   const target = useRef(null);
   const { isInView } = useTargetInView(target);
 
   useEffect(() => {
-    isInView ? setActiveSaction('business') : setActiveSaction('other');
+    isInView ? setActiveSection('business') : removeActiveSection('business');
   }, [isInView]);
 
   return (
