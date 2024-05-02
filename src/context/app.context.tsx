@@ -43,8 +43,9 @@ export const AppContextProvider = ({
 
   const [sections, setSections] = useState<TypeActiveSection[]>([]);
   const setActiveSection = (value: TypeActiveSection) => {
-    setSections([...sections, value]);
+    value === 'business' ? setSections([]) : setSections([...sections, value]);
   };
+
   const removeActiveSection = (value: TypeActiveSection) => {
     setSections(sections.filter((s) => s !== value));
   };
