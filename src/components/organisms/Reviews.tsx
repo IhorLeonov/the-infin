@@ -31,11 +31,9 @@ export default function Reviews({ className }: ReviewsProps) {
   ) as IAppContext;
 
   useEffect(() => {
-    if (isInViewTargetBottom || isInViewTargetMiddle) {
-      setActiveSection('reviews');
-      return;
-    }
-    removeActiveSection('reviews');
+    isInViewTargetBottom || isInViewTargetMiddle
+      ? setActiveSection('reviews')
+      : removeActiveSection('reviews');
   }, [isInViewTargetBottom, isInViewTargetMiddle]);
 
   return (

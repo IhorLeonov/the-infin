@@ -20,6 +20,7 @@ export default function Header({}: HeaderProps) {
   const { isMobile } = useCheckIsMobile();
 
   const targetRef = useRef(null);
+  console.log(activeSection);
 
   const { isInView } = useTargetInView(targetRef);
 

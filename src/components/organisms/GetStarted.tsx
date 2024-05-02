@@ -31,11 +31,9 @@ export default function GetStarted({ className }: GetStartedProps) {
   const { isInView: isInViewTargetBottom } = useTargetInView(targetBottom);
 
   useEffect(() => {
-    if (isInViewTargetBottom || isInViewTargetMiddle) {
-      setActiveSection('getstarted');
-      return;
-    }
-    removeActiveSection('getstarted');
+    isInViewTargetBottom
+      ? setActiveSection('getstarted')
+      : removeActiveSection('getstarted');
   }, [isInViewTargetBottom, isInViewTargetMiddle]);
 
   return (
