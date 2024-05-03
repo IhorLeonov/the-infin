@@ -1,3 +1,6 @@
+'use client';
+
+import clsx from 'clsx';
 import styles from '../styles/components/HomePage.module.scss';
 
 import Hero from '@/components/organisms/Hero';
@@ -8,6 +11,14 @@ import Individuals from '@/components/organisms/Individuals';
 import Reviews from '@/components/organisms/Reviews';
 import GetStarted from '@/components/organisms/GetStarted';
 
+import {
+  Variants,
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  useTransform,
+} from 'framer-motion';
+
 export default function HomePage() {
   return (
     <div className={styles.page}>
@@ -15,12 +26,23 @@ export default function HomePage() {
       <HeroImage />
       <WhyChoose />
 
-      <div className={styles.cardList}>
-        <Business className={styles.card} />
-        <Individuals className={styles.card} />
-        <Reviews className={styles.card} />
-        <GetStarted className={styles.card} />
-      </div>
+      <motion.div className={styles.cardList}>
+        <motion.div className={clsx(styles.card, styles.card1)}>
+          <Business />
+        </motion.div>
+
+        <motion.div className={clsx(styles.card, styles.card2)}>
+          <Individuals />
+        </motion.div>
+
+        <motion.div className={clsx(styles.card, styles.card3)}>
+          <Reviews />
+        </motion.div>
+
+        <motion.div className={clsx(styles.card, styles.card4)}>
+          <GetStarted />
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

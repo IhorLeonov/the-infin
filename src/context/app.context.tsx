@@ -6,13 +6,13 @@ import { ReactNode, createContext, useState } from 'react';
 export interface IAppContext {
   cursorVisibility: TypeCursorVisibility;
   setCursorVisibility: (cursorDisplay: TypeCursorVisibility) => void;
-
   activeSection?: TypeActiveSection[];
   setActiveSection: (value: TypeActiveSection) => void;
   removeActiveSection: (value: TypeActiveSection) => void;
-
   showAllDom: boolean;
   setShowAllDom: (value: boolean) => void;
+  showFooter: boolean;
+  setShowFooter: (value: boolean) => void;
 }
 
 export const AppContext = createContext<IAppContext>({
@@ -21,8 +21,10 @@ export const AppContext = createContext<IAppContext>({
   activeSection: [],
   setActiveSection: () => {},
   removeActiveSection: () => {},
-  showAllDom: false,
+  showAllDom: true,
   setShowAllDom: () => {},
+  showFooter: false,
+  setShowFooter: () => {},
 });
 
 export const AppContextProvider = ({
@@ -30,9 +32,14 @@ export const AppContextProvider = ({
 }: {
   children: ReactNode;
 }): JSX.Element => {
-  const [showAll, setShowAll] = useState<boolean>(false);
+  const [showAll, setShowAll] = useState<boolean>(true);
   const setShowAllDom = (value: boolean) => {
     setShowAll(value);
+  };
+
+  const [isShowFooter, setIsShowFooter] = useState<boolean>(true);
+  const setShowFooter = (value: boolean) => {
+    setIsShowFooter(value);
   };
 
   const [cursorDisplay, setCursorDisplay] =
@@ -43,7 +50,11 @@ export const AppContextProvider = ({
 
   const [sections, setSections] = useState<TypeActiveSection[]>([]);
   const setActiveSection = (value: TypeActiveSection) => {
-    value === 'business' ? setSections([]) : setSections([...sections, value]);
+    value === 'business'
+      ? setSections([])
+      : value === 'getstarted'
+        ? setSections(['getstarted'])
+        : setSections([...sections, value]);
   };
 
   const removeActiveSection = (value: TypeActiveSection) => {
@@ -60,6 +71,8 @@ export const AppContextProvider = ({
         removeActiveSection,
         showAllDom: showAll,
         setShowAllDom,
+        showFooter: isShowFooter,
+        setShowFooter,
       }}
     >
       {children}

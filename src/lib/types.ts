@@ -8,7 +8,7 @@ export interface IReview {
 export type TypeCursorVisibility = 'block' | 'none';
 
 export interface CardProps {
-  className: string;
+  className?: string;
 }
 
 export type TypeActiveSection =

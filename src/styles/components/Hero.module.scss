@@ -76,8 +76,6 @@
   .topBlock,
   .bottomBlock {
     display: block;
-    // flex-direction: column;
-    // gap: 20px;
   }
 
   .imageContainer,
@@ -86,8 +84,7 @@
   }
 
   .button {
-    margin-top: 30px; //
-    // margin-left: auto;
+    margin-top: 30px;
     margin-right: auto;
   }
 }

@@ -6,11 +6,9 @@ export const useRefDimensions = (ref: React.RefObject<HTMLElement>) => {
   const [dimensions, setDimensions] = useState<{
     width: number;
     height: number;
-    topPosition: number;
   }>({
     width: 0,
     height: 0,
-    topPosition: 0,
   });
 
   useEffect(() => {
@@ -22,7 +20,6 @@ export const useRefDimensions = (ref: React.RefObject<HTMLElement>) => {
       setDimensions({
         width: Math.round(width),
         height: Math.round(height),
-        topPosition,
       });
     }
   }, [ref]);
