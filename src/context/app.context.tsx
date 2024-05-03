@@ -23,7 +23,7 @@ export const AppContext = createContext<IAppContext>({
   removeActiveSection: () => {},
   showAllDom: true,
   setShowAllDom: () => {},
-  showFooter: false,
+  showFooter: true,
   setShowFooter: () => {},
 });
 
@@ -32,7 +32,7 @@ export const AppContextProvider = ({
 }: {
   children: ReactNode;
 }): JSX.Element => {
-  const [showAll, setShowAll] = useState<boolean>(true);
+  const [showAll, setShowAll] = useState<boolean>(false);
   const setShowAllDom = (value: boolean) => {
     setShowAll(value);
   };

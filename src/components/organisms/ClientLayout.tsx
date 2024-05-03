@@ -19,7 +19,7 @@ export default function ClientLayout({ children }: ClientLayotProps) {
 
   return (
     <>
-      {/* <WelcomeAnimation setShowAllDom={setShowAllDom} /> */}
+      <WelcomeAnimation setShowAllDom={setShowAllDom} />
       {showAllDom && (
         <div className={styles.wrapper}>
           <Header />

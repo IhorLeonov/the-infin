@@ -6,10 +6,10 @@ import styles from '../../styles/components/Hero.module.scss';
 import { Section } from '../atoms/Section';
 import { Title } from '../atoms/Title';
 import { Button } from '../atoms/Button';
+import { motion } from 'framer-motion';
 
 import Image from 'next/image';
 import PlusesGrid from '../atoms/PlusesGrid';
-import { motion } from 'framer-motion';
 import useTargetInView from '@/hooks/useTargetInView';
 
 interface HeroProps {}
@@ -25,7 +25,12 @@ export default function Hero({}: HeroProps) {
           Web +<br /> Mobile app
         </Title>
 
-        <div className={styles.imageContainer}>
+        <motion.div
+          initial={{ scale: 0.75 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.5, duration: 1.5 }}
+          className={styles.imageContainer}
+        >
           <Image
             className={styles.image}
             src="/images/hand-phone.png"
@@ -34,7 +39,7 @@ export default function Hero({}: HeroProps) {
             alt="hand with phone"
             priority
           />
-        </div>
+        </motion.div>
       </div>
 
       <div className={styles.bottomBlock}>
@@ -42,7 +47,12 @@ export default function Hero({}: HeroProps) {
           A market-based assessment of your contribution.
         </span>
 
-        <div className={styles.titleBox}>
+        <motion.div
+          initial={{ scale: 0.75 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.5, duration: 1.5 }}
+          className={styles.titleBox}
+        >
           <Title tag="h1" className={styles.title}>
             To know your true value,  Help others understand theirs.
           </Title>
@@ -56,7 +66,7 @@ export default function Hero({}: HeroProps) {
           >
             <PlusesGrid />
           </motion.div>
-        </div>
+        </motion.div>
 
         <Button className={styles.button} appearance="primary">
           Schedule a demo
