@@ -6,6 +6,8 @@
 }
 
 .title {
+  @include h3;
+
   width: 122px;
 }
 

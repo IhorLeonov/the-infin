@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from '../../styles/components/Individuals.module.scss';
+import clsx from 'clsx';
+
 import { Section } from '../atoms/Section';
-import { Title } from '../atoms/Title';
-import Description from '../molecules/Description';
-import ImageWithButton from '../molecules/ImageWithButton';
 import { CardTitle } from '../molecules/CardTitle';
 import { CardProps } from '@/lib/types';
-import clsx from 'clsx';
+import Description from '../molecules/Description';
+import ImageWithButton from '../molecules/ImageWithButton';
+import AnimatedLineText from '../molecules/AnimatedLineText';
 
 interface IndividualsProps extends CardProps {}
 
@@ -32,9 +33,15 @@ export default function Individuals({ className }: IndividualsProps) {
           cardTitle="INDIVIDUALS"
         />
 
-        <Title className={styles.title} tag="h2">
+        {/* <h2 className={styles.title}>
           Fairness and Objective Data for Individuals
-        </Title>
+        </h2> */}
+        <AnimatedLineText
+          el="h2"
+          text={['Fairness and Objective', 'Data for Individuals']}
+          className={styles.title}
+        />
+
         <Description className={styles.description} />
       </div>
     </Section>

@@ -1,18 +1,18 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { Title } from '../atoms/Title';
 import Image from 'next/image';
 import styles from '../../styles/components/WhyChooseItem.module.scss';
+import AnimatedText from './AnimatedText';
+
 import { Divider } from '../atoms/Divider';
+import { useScroll, useTransform, motion } from 'framer-motion';
 
 interface SmallCardProps {
-  title: string;
+  title: string[];
   text: string;
   imageSrc: string;
 }
-
-import { useScroll, useTransform, motion } from 'framer-motion';
 
 export default function WhyChooseItem({
   title,
@@ -32,11 +32,16 @@ export default function WhyChooseItem({
     <li ref={containerRef}>
       <Divider className={styles.hr} />
       <div className={styles.card}>
-        <Title className={styles.title} tag="h3">
-          {title}
-        </Title>
+        <h3 className={styles.title}>{title}</h3>
+        {/* <AnimatedLineText
+          delay={1}
+          className={styles.title}
+          el="h3"
+          text={title}
+        /> */}
 
-        <p className={styles.text}>{text}</p>
+        {/* <p className={styles.text}>{text}</p> */}
+        <AnimatedText className={styles.text} text={text} once />
 
         <div className={styles.imageContainer}>
           <motion.div style={{ scale }}>

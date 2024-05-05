@@ -5,7 +5,6 @@ import styles from '../../styles/components/Reviews.module.scss';
 import clsx from 'clsx';
 
 import { Section } from '../atoms/Section';
-import { Title } from '../atoms/Title';
 import { Divider } from '../atoms/Divider';
 import { CardTitle } from '../molecules/CardTitle';
 import { reviews } from '@/lib/constants';
@@ -16,6 +15,7 @@ import { AppContext, IAppContext } from '@/context/app.context';
 import PlusIcon from '../../../public/icons/plus.svg';
 import ReviewList from '../molecules/ReviewList';
 import useTargetInView from '@/hooks/useTargetInView';
+import AnimatedLineText from '../molecules/AnimatedLineText';
 
 interface ReviewsProps extends CardProps {}
 
@@ -50,10 +50,22 @@ export default function Reviews({ className }: ReviewsProps) {
           cardTitle="Reviews"
         />
 
-        <Title className={styles.title} tag="h2">
-          <span>Fairness and</span>{' '}
-          <span className={styles.titleAccent}>Objective</span>
-        </Title>
+        <h2 className={styles.title}>
+          {/* <span>Fairness and</span>{' '}
+          <span className={styles.titleAccent}>Objective</span> */}
+          {/* <AnimatedLineText el="span" text={['Fairness and']} />
+          <AnimatedLineText
+            className={styles.titleAccent}
+            el="span"
+            text={['Objective']}
+          /> */}
+        </h2>
+
+        <AnimatedLineText
+          className={styles.title}
+          el="h2"
+          text={['Fairness and', 'Objective']}
+        />
 
         <motion.div
           className={styles.pluses}
@@ -72,7 +84,9 @@ export default function Reviews({ className }: ReviewsProps) {
             alternative to the limited and speculative information normally
             available to employers and individuals.
           </p>
+
           <Divider className={styles.hr} />
+
           <p>
             The old maxim of “knowledge is power” applies here for both
             employers and employees. Don’t let individual performance and

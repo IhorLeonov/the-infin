@@ -3,6 +3,7 @@ import styles from '../../styles/components/ReviewItem.module.scss';
 import clsx from 'clsx';
 
 import Image from 'next/image';
+import AnimatedText from './AnimatedText';
 
 interface ReviewItemProps
   extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
@@ -22,7 +23,8 @@ export default function ReviewItem({
 }: ReviewItemProps) {
   return (
     <li className={clsx(styles.reviewItem, className)} {...props}>
-      <p className={styles.review}>{review}</p>
+      {/* <p className={styles.review}>{review}</p> */}
+      <AnimatedText className={styles.review} text={review} once />
 
       <div className={styles.reviewer}>
         <Image

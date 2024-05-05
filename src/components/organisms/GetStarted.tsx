@@ -16,6 +16,8 @@ import boyImage from '../../../public/images/boy.jpg';
 import PlusesIcon from '../../../public/icons/plusGroup.svg';
 import useTargetInView from '@/hooks/useTargetInView';
 import { AppContext, IAppContext } from '@/context/app.context';
+import AnimatedLineText from '../molecules/AnimatedLineText';
+import AnimatedText from '../molecules/AnimatedText';
 
 interface GetStartedProps extends CardProps {}
 
@@ -45,11 +47,24 @@ export default function GetStarted({ className }: GetStartedProps) {
     >
       <CardTitle showTitle={false} cardNumber="03" cardTitle="Get started" />
 
-      <p className={styles.text}>What can The INFIN do for you?</p>
+      {/* <p className={styles.text}>What can The INFIN do for you?</p> */}
+      <AnimatedText
+        className={styles.text}
+        text={['What can The INFIN do for you?']}
+        delay={0.5}
+      />
 
-      <strong className={styles.textStrong} ref={targetMiddle}>
+      {/* <strong className={styles.textStrong} ref={targetMiddle}>
         Ready to get started
-      </strong>
+      </strong> */}
+      <div ref={targetMiddle} className={styles.targetMiddle}>
+        <AnimatedLineText
+          className={styles.textStrong}
+          el="strong"
+          text={['Ready to', 'get started']}
+          once
+        />
+      </div>
 
       <Button className={styles.button} appearance="primary">
         Schedule a live demo

@@ -15,9 +15,17 @@
 }
 
 .title {
+  @include h2;
+
   margin-top: 36px;
   max-width: 489px;
   color: $light;
+
+  & :nth-child(2) {
+    span :nth-child(2) {
+      color: $accent;
+    }
+  }
 }
 
 .titleAccent {

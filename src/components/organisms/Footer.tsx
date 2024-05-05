@@ -4,6 +4,7 @@ import styles from '../../styles/components/Footer.module.scss';
 import { Title } from '../atoms/Title';
 import ThinksebIcon from '../../../public/icons/thinkseb.svg';
 import Logo from '../atoms/LogoIcon';
+import AnimatedText from '../molecules/AnimatedText';
 
 interface FooterProps {}
 
@@ -11,11 +12,18 @@ export default function Footer({}: FooterProps) {
   return (
     <footer className={styles.footer}>
       <div className={styles.topBlock}>
-        <p className={styles.description}>
+        {/* <p className={styles.description}>
           Employers have to decide on bonuses and promotions based on limited
           information and often with resentment from the employees. It’s
           frustrating.
-        </p>
+        </p> */}
+        <AnimatedText
+          className={styles.description}
+          text="Employers have to decide on bonuses and promotions based on limited
+          information and often with resentment from the employees. It’s
+          frustrating."
+          once
+        />
 
         <ul className={styles.list}>
           <li className={styles.listItem}>

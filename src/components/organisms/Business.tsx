@@ -12,6 +12,7 @@ import { CardTitle } from '../molecules/CardTitle';
 import { CardProps } from '@/lib/types';
 import useTargetInView from '@/hooks/useTargetInView';
 import { AppContext, IAppContext } from '@/context/app.context';
+import AnimatedLineText from '../molecules/AnimatedLineText';
 
 interface BusinessProps extends CardProps {}
 
@@ -41,9 +42,15 @@ export default function Business({ className }: BusinessProps) {
           cardTitle="Business"
         />
 
-        <Title className={styles.title} tag="h2">
+        {/* <h2 className={styles.title}>
           The Insufficient Status Quo for Businesses
-        </Title>
+        </h2> */}
+        <AnimatedLineText
+          el="h2"
+          text={['The Insufficient Status', 'Quo for Businesses']}
+          className={styles.title}
+        />
+
         <Description className={styles.description} />
       </div>
 

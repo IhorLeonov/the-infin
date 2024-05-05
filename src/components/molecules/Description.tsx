@@ -1,8 +1,9 @@
-import React, { DetailedHTMLProps, HtmlHTMLAttributes } from "react";
-import styles from "../../styles/components/Description.module.scss";
-import { Divider } from "../atoms/Divider";
-import { Title } from "../atoms/Title";
-import clsx from "clsx";
+import React, { DetailedHTMLProps, HtmlHTMLAttributes } from 'react';
+import styles from '../../styles/components/Description.module.scss';
+import { Divider } from '../atoms/Divider';
+
+import clsx from 'clsx';
+import AnimatedText from './AnimatedText';
 
 interface DescriptionProps
   extends DetailedHTMLProps<
@@ -16,10 +17,9 @@ export default function Description({ className, ...props }: DescriptionProps) {
       <Divider className={styles.hr} />
 
       <div className={styles.topBlock}>
-        <Title className={styles.title} tag="h3">
-          For employers
-        </Title>
-        <p className={styles.bigText}>
+        <h3 className={styles.title}>For employers</h3>
+
+        {/* <p className={styles.bigText}>
           It’s hard to evaluate individual contributions in a team environment
           because some employees are more visible. Similarly, some employees may
           take more credit than others. Meanwhile, the ones who are actually
@@ -27,20 +27,32 @@ export default function Description({ className, ...props }: DescriptionProps) {
           radar. And then, employers have to decide on bonuses and promotions
           based on limited information and often with resentment from the
           employees. It’s frustrating.
-        </p>
+        </p> */}
+        <AnimatedText
+          className={styles.bigText}
+          text="It’s hard to evaluate individual contributions in a team environment
+          because some employees are more visible. Similarly, some employees may
+          take more credit than others. Meanwhile, the ones who are actually
+          driving the company’s success may be flying completely under the
+          radar. And then, employers have to decide on bonuses and promotions
+          based on limited information and often with resentment from the
+          employees. It’s frustrating."
+          once
+        />
       </div>
 
       <Divider className={styles.hr} />
 
       <div className={styles.bottomBlock}>
-        <Title className={styles.title} tag="h3">
+        <h3 className={styles.title}>
           Use The INFIN’s <br /> insights to
-        </Title>
+        </h3>
 
         <p className={styles.bottomText}>
           <span>
             Determine the individual contribution and ROI of every employee
           </span>
+
           <span>
             Identify underperformers and better utilize employee strengths
           </span>
