@@ -25,12 +25,7 @@ export default function Hero({}: HeroProps) {
           Web +<br /> Mobile app
         </h3>
 
-        <motion.div
-          // initial={{ scale: 0.75 }}
-          // animate={{ scale: 1 }}
-          // transition={{ delay: 0.5, duration: 1.5 }}
-          className={styles.imageContainer}
-        >
+        <motion.div className={styles.imageContainer}>
           <Image
             className={styles.image}
             src="/images/hand-phone.png"
