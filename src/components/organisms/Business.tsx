@@ -5,13 +5,13 @@ import styles from '../../styles/components/Business.module.scss';
 import clsx from 'clsx';
 
 import { Section } from '../atoms/Section';
-import ImageWithButton from '../molecules/ImageWithButton';
-import Description from '../molecules/Description';
-import { Title } from '../atoms/Title';
 import { CardTitle } from '../molecules/CardTitle';
 import { CardProps } from '@/lib/types';
-import useTargetInView from '@/hooks/useTargetInView';
 import { AppContext, IAppContext } from '@/context/app.context';
+
+import useTargetInView from '@/hooks/useTargetInView';
+import ImageWithButton from '../molecules/ImageWithButton';
+import Description from '../molecules/Description';
 import AnimatedLineText from '../molecules/AnimatedLineText';
 
 interface BusinessProps extends CardProps {}
