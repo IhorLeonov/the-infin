@@ -4,6 +4,7 @@ import clsx from 'clsx';
 
 import Image from 'next/image';
 import AnimatedText from './AnimatedText';
+import useCheckIsMobile from '@/hooks/useCheckIsMobile.ts';
 
 interface ReviewItemProps
   extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
@@ -21,10 +22,15 @@ export default function ReviewItem({
   className,
   ...props
 }: ReviewItemProps) {
+  const { isTablet } = useCheckIsMobile();
+
   return (
     <li className={clsx(styles.reviewItem, className)} {...props}>
-      {/* <p className={styles.review}>{review}</p> */}
-      <AnimatedText className={styles.review} text={review} once />
+      {!isTablet ? (
+        <AnimatedText className={styles.review} text={review} once />
+      ) : (
+        <p className={styles.review}>{review}</p>
+      )}
 
       <div className={styles.reviewer}>
         <Image

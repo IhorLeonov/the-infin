@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={neueHaasGrotesk.className}>
-        <link rel="icon" href="/images/icon.png" sizes="any" />
+        <link rel="icon" href="/images/icon.webp" sizes="any" />
         <AppContextProvider>
           <ClientLayout>{children}</ClientLayout>
         </AppContextProvider>

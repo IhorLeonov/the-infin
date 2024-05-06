@@ -7,6 +7,7 @@ import AnimatedText from './AnimatedText';
 
 import { Divider } from '../atoms/Divider';
 import { useScroll, useTransform, motion } from 'framer-motion';
+import useCheckIsMobile from '@/hooks/useCheckIsMobile.ts';
 
 interface SmallCardProps {
   title: string[];
@@ -19,6 +20,7 @@ export default function WhyChooseItem({
   text,
   imageSrc,
 }: SmallCardProps) {
+  const { isTablet } = useCheckIsMobile();
   const containerRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -33,15 +35,12 @@ export default function WhyChooseItem({
       <Divider className={styles.hr} />
       <div className={styles.card}>
         <h3 className={styles.title}>{title}</h3>
-        {/* <AnimatedLineText
-          delay={1}
-          className={styles.title}
-          el="h3"
-          text={title}
-        /> */}
 
-        {/* <p className={styles.text}>{text}</p> */}
-        <AnimatedText className={styles.text} text={text} once />
+        {!isTablet ? (
+          <AnimatedText className={styles.text} text={text} once />
+        ) : (
+          <p className={styles.text}>{text}</p>
+        )}
 
         <div className={styles.imageContainer}>
           <motion.div style={{ scale }}>
