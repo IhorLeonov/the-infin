@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '../../styles/components/Footer.module.scss';
 
-import { Title } from '../atoms/Title';
 import ThinksebIcon from '../../../public/icons/thinkseb.svg';
 import Logo from '../atoms/LogoIcon';
 import AnimatedText from '../molecules/AnimatedText';
@@ -27,9 +26,7 @@ export default function Footer({}: FooterProps) {
 
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <Title tag="h3" className={styles.title}>
-              Pages
-            </Title>
+            <h3 className={styles.title}>Pages</h3>
 
             <a href="#home">Home</a>
             <a href="#business">For Businesses</a>
@@ -37,45 +34,34 @@ export default function Footer({}: FooterProps) {
             <a href="#reviews">Blog</a>
             <a href="#getstarted">Marketing&nbsp;Efforts</a>
           </li>
-
           <li className={styles.listItem}>
-            <Title tag="h3" className={styles.title}>
-              For Business
-            </Title>
+            <h3 className={styles.title}>For Business</h3>
 
-            <a>Label link 1</a>
-            <a>Label link 2</a>
-            <a>Label link 3</a>
+            <a href="">Label link 1</a>
+            <a href="">Label link 2</a>
+            <a href="">Label link 3</a>
           </li>
-
+          href=""
           <li className={styles.listItem}>
-            <Title tag="h3" className={styles.title}>
-              For Individuals
-            </Title>
+            <h3 className={styles.title}>For Individuals</h3>
 
-            <a>Label link 1</a>
-            <a>Label link 2</a>
-            <a>Label link 3</a>
+            <a href="">Label link 1</a>
+            <a href="">Label link 2</a>
+            <a href="">Label link 3</a>
           </li>
-
           <li className={styles.listItem}>
-            <Title tag="h3" className={styles.title}>
-              Contact
-            </Title>
+            <h3 className={styles.title}>Contact</h3>
 
-            <a>For Businesses</a>
-            <a>For Individuals</a>
+            <a href="">421-273-0427</a>
+            <a href="">info@theinfin.com</a>
           </li>
-
           <li className={styles.listItem}>
-            <Title tag="h3" className={styles.title}>
-              Social Media
-            </Title>
+            <h3 className={styles.title}>Social Media</h3>
 
-            <a>Instagram</a>
-            <a>LinkedIn</a>
-            <a>Facebook</a>
-            <a>Twitter</a>
+            <a href="">Instagram</a>
+            <a href="">LinkedIn</a>
+            <a href="">Facebook</a>
+            <a href="">Twitter</a>
           </li>
         </ul>
       </div>
