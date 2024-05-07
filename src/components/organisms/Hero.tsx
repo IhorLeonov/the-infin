@@ -32,7 +32,6 @@ export default function Hero({}: HeroProps) {
             width={201}
             height={160}
             alt="hand with phone"
-            priority
           />
         </motion.div>
       </div>
