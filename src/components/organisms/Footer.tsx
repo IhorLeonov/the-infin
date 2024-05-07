@@ -41,7 +41,7 @@ export default function Footer({}: FooterProps) {
             <a href="">Label link 2</a>
             <a href="">Label link 3</a>
           </li>
-          href=""
+
           <li className={styles.listItem}>
             <h3 className={styles.title}>For Individuals</h3>
 
