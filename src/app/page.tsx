@@ -1,8 +1,5 @@
-'use client';
-
 import clsx from 'clsx';
 import styles from '../styles/components/HomePage.module.scss';
-
 import Hero from '@/components/organisms/Hero';
 import WhyChoose from '@/components/organisms/WhyChoose';
 import HeroImage from '@/components/organisms/HeroImage';
@@ -11,38 +8,36 @@ import Individuals from '@/components/organisms/Individuals';
 import Reviews from '@/components/organisms/Reviews';
 import GetStarted from '@/components/organisms/GetStarted';
 
-import {
-  Variants,
-  motion,
-  useScroll,
-  useMotionValueEvent,
-  useTransform,
-} from 'framer-motion';
+import { fetchDataFromCMS } from '@/lib/api';
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { data } = await fetchDataFromCMS();
+
+  const content = data.theInfin.theInfinDetail;
+
   return (
     <div className={styles.page}>
-      <Hero />
+      <Hero content={content} />
       <HeroImage />
       <WhyChoose />
 
-      <motion.div className={styles.cardList}>
-        <motion.div className={clsx(styles.card, styles.card1)}>
+      <div className={styles.cardList}>
+        <div className={clsx(styles.card, styles.card1)}>
           <Business />
-        </motion.div>
+        </div>
 
-        <motion.div className={clsx(styles.card, styles.card2)}>
+        <div className={clsx(styles.card, styles.card2)}>
           <Individuals />
-        </motion.div>
+        </div>
 
-        <motion.div className={clsx(styles.card, styles.card3)}>
+        <div className={clsx(styles.card, styles.card3)}>
           <Reviews />
-        </motion.div>
+        </div>
 
-        <motion.div className={clsx(styles.card, styles.card4)}>
+        <div className={clsx(styles.card, styles.card4)}>
           <GetStarted />
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,10 +1,12 @@
+'use client';
+
 import React, { DetailedHTMLProps, HtmlHTMLAttributes } from 'react';
 import styles from '../../styles/components/Description.module.scss';
 import { Divider } from '../atoms/Divider';
 
 import clsx from 'clsx';
 import AnimatedText from './AnimatedText';
-import useCheckIsMobile from '@/hooks/useCheckIsMobile.ts';
+import useCheckIsMobile from '@/hooks/useCheckIsMobile';
 
 interface DescriptionProps
   extends DetailedHTMLProps<

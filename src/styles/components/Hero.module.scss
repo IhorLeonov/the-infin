@@ -60,6 +60,11 @@
 
 .smallTitle {
   @include h3;
+
+  span {
+    display: block;
+    max-width: 56px;
+  }
 }
 
 .smallTitle,

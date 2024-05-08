@@ -7,7 +7,7 @@ import AnimatedText from './AnimatedText';
 
 import { Divider } from '../atoms/Divider';
 import { useScroll, useTransform, motion } from 'framer-motion';
-import useCheckIsMobile from '@/hooks/useCheckIsMobile.ts';
+import useCheckIsMobile from '@/hooks/useCheckIsMobile';
 
 interface SmallCardProps {
   title: string[];

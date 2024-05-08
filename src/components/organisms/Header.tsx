@@ -8,7 +8,7 @@ import { AppContext, IAppContext } from '@/context/app.context';
 import { colors } from '@/lib/constants';
 
 import Logo from '../atoms/Logo';
-import useCheckIsMobile from '@/hooks/useCheckIsMobile.ts';
+import useCheckIsMobile from '@/hooks/useCheckIsMobile';
 import useTargetInView from '@/hooks/useTargetInView';
 import clsx from 'clsx';
 

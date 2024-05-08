@@ -1,10 +1,12 @@
+'use client';
+
 import React, { DetailedHTMLProps, HtmlHTMLAttributes } from 'react';
 import styles from '../../styles/components/ReviewItem.module.scss';
 import clsx from 'clsx';
 
 import Image from 'next/image';
 import AnimatedText from './AnimatedText';
-import useCheckIsMobile from '@/hooks/useCheckIsMobile.ts';
+import useCheckIsMobile from '@/hooks/useCheckIsMobile';
 
 interface ReviewItemProps
   extends DetailedHTMLProps<HtmlHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
