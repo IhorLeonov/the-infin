@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import styles from '../styles/components/HomePage.module.scss';
+
 import Hero from '@/components/organisms/Hero';
 import WhyChoose from '@/components/organisms/WhyChoose';
 import HeroImage from '@/components/organisms/HeroImage';
@@ -8,7 +9,7 @@ import Individuals from '@/components/organisms/Individuals';
 import Reviews from '@/components/organisms/Reviews';
 import GetStarted from '@/components/organisms/GetStarted';
 
-import { fetchDataFromCMS } from '@/lib/api';
+import { fetchDataFromCMS } from '@/lib/datocms-api';
 import { notFound } from 'next/navigation';
 
 export default async function HomePage() {
