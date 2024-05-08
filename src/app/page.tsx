@@ -9,13 +9,12 @@ import Individuals from '@/components/organisms/Individuals';
 import Reviews from '@/components/organisms/Reviews';
 import GetStarted from '@/components/organisms/GetStarted';
 
-import { fetchDataFromCMS } from '@/lib/datocms-api';
+import { fetchDataFromCMS } from '@/lib/api';
 
 export default async function HomePage() {
   const { data } = await fetchDataFromCMS();
 
   const content = data.theInfin.theInfinDetail;
-  console.log(content);
 
   return (
     <div className={styles.page}>

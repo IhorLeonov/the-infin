@@ -9,7 +9,7 @@ import AnimatedText from '../molecules/AnimatedText';
 import { Section } from '../atoms/Section';
 import { Button } from '../atoms/Button';
 import { motion } from 'framer-motion';
-import { IInfinDetail } from '@/lib/datocms-api';
+import { IInfinDetail } from '@/lib/api';
 import { notFound } from 'next/navigation';
 
 interface HeroProps {
