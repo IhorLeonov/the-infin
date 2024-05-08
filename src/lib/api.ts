@@ -14,7 +14,6 @@ const query = `
           description
           buttonText
           isPluses
-          isButton
           smallImage {
             id
             url
@@ -35,7 +34,6 @@ export interface IInfinDetail {
   description: string;
   buttonText: string;
   isPluses: boolean;
-  isButton: boolean;
 
   smallImage: {
     id: string;

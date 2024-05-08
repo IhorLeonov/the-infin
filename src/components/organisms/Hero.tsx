@@ -85,12 +85,10 @@ export default function Hero({ content }: HeroProps) {
           )}
         </motion.div>
 
-        {heroData.isButton && (
-          <Button className={styles.button} appearance="primary">
-            {/* Schedule a demo */}
-            {heroData.buttonText}
-          </Button>
-        )}
+        <Button className={styles.button} appearance="primary">
+          {/* Schedule a demo */}
+          {heroData.buttonText}
+        </Button>
       </div>
     </Section>
   );
