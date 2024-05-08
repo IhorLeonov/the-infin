@@ -3,7 +3,6 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
 import styles from '../../styles/components/WhyChooseItem.module.scss';
-import AnimatedText from './AnimatedText';
 
 import { Divider } from '../atoms/Divider';
 import { useScroll, useTransform, motion } from 'framer-motion';
@@ -36,11 +35,12 @@ export default function WhyChooseItem({
       <div className={styles.card}>
         <h3 className={styles.title}>{title}</h3>
 
-        {!isTablet ? (
+        {/* {!isTablet ? (
           <AnimatedText className={styles.text} text={text} once />
         ) : (
           <p className={styles.text}>{text}</p>
-        )}
+        )} */}
+        <p className={styles.text}>{text}</p>
 
         <div className={styles.imageContainer}>
           <motion.div style={{ scale }}>

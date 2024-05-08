@@ -4,13 +4,13 @@ import React, { useRef } from 'react';
 import styles from '../../styles/components/Hero.module.scss';
 import Image from 'next/image';
 import PlusesGrid from '../atoms/PlusesGrid';
-import useTargetInView from '@/hooks/useTargetInView';
 import AnimatedText from '../molecules/AnimatedText';
+// import useTargetInView from '@/hooks/useTargetInView';
 
 import { Section } from '../atoms/Section';
 import { Button } from '../atoms/Button';
 import { motion } from 'framer-motion';
-import { IInfinDetail, fetchDataFromCMS } from '@/lib/datocms-api';
+import { IInfinDetail } from '@/lib/datocms-api';
 import { notFound } from 'next/navigation';
 
 interface HeroProps {
@@ -18,8 +18,8 @@ interface HeroProps {
 }
 
 export default function Hero({ content }: HeroProps) {
-  const targetRef = useRef(null);
-  const { isInView } = useTargetInView(targetRef);
+  // const targetRef = useRef(null);
+  // const { isInView } = useTargetInView(targetRef);
 
   const heroData = content?.find((item) => item.__typename === 'HeroRecord');
   if (!heroData) notFound();
@@ -71,14 +71,15 @@ export default function Hero({ content }: HeroProps) {
             {heroData.mainTitle}
           </h1>
 
-          <div ref={targetRef} />
+          {/* <div ref={targetRef} /> */}
 
           {heroData.isPluses && (
             <motion.div
               className={styles.plusesGrid}
               initial={{ opacity: 0 }}
-              animate={{ opacity: isInView ? 1 : 0 }}
-              transition={{ duration: 2, delay: 0.5 }}
+              whileInView={{ opacity: 1 }}
+              // animate={{ opacity: isInView ? 1 : 0 }}
+              transition={{ duration: 3, delay: 1 }}
             >
               <PlusesGrid />
             </motion.div>

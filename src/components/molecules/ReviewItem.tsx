@@ -28,11 +28,12 @@ export default function ReviewItem({
 
   return (
     <li className={clsx(styles.reviewItem, className)} {...props}>
-      {!isTablet ? (
+      {/* {!isTablet ? (
         <AnimatedText className={styles.review} text={review} once />
       ) : (
         <p className={styles.review}>{review}</p>
-      )}
+      )} */}
+      <p className={styles.review}>{review}</p>
 
       <div className={styles.reviewer}>
         <Image

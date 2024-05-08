@@ -8,15 +8,15 @@ import { motion } from 'framer-motion';
 
 import WhyChooseItem from '../molecules/WhyChooseItem';
 import PlusesIcon from '../../../public/icons/plusGroup.svg';
-import useTargetInView from '@/hooks/useTargetInView';
-import AnimatedText from '../molecules/AnimatedText';
+// import useTargetInView from '@/hooks/useTargetInView';
+// import AnimatedText from '../molecules/AnimatedText';
 import AnimatedLineText from '../molecules/AnimatedLineText';
 
 interface WhyChooseProps {}
 
 export default function WhyChoose({}: WhyChooseProps) {
-  const targetRef = useRef(null);
-  const { isInView } = useTargetInView(targetRef);
+  // const targetRef = useRef(null);
+  // const { isInView } = useTargetInView(targetRef);
 
   return (
     <Section className={styles.section} type="ghost">
@@ -44,11 +44,12 @@ export default function WhyChoose({}: WhyChooseProps) {
       <motion.div
         className={styles.plusesContainer}
         initial={{ opacity: 0 }}
-        animate={{ opacity: isInView ? 1 : 0 }}
-        transition={{ duration: 3 }}
+        whileInView={{ opacity: 1 }}
+        // animate={{ opacity: isInView ? 1 : 0 }}
+        transition={{ duration: 2, delay: 0.5 }}
       >
         <PlusesIcon className={styles.pluses} />
-        <div ref={targetRef} />
+        {/* <div ref={targetRef} /> */}
       </motion.div>
     </Section>
   );
