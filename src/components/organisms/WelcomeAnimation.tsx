@@ -33,6 +33,7 @@ export default function WelcomeAnimation({
     setTimeout(() => {
       document.body.style.overflow = 'scroll';
     }, 3000);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

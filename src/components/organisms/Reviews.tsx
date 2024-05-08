@@ -34,6 +34,7 @@ export default function Reviews({ className }: ReviewsProps) {
     isInViewTargetBottom || isInViewTargetMiddle
       ? setActiveSection('reviews')
       : removeActiveSection('reviews');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInViewTargetBottom, isInViewTargetMiddle]);
 
   return (

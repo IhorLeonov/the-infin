@@ -26,6 +26,7 @@ export default function Business({ className }: BusinessProps) {
 
   useEffect(() => {
     isInView ? setActiveSection('business') : removeActiveSection('business');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
   return (

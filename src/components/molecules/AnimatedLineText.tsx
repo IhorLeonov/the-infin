@@ -68,6 +68,7 @@ export default function AnimatedLineText({
     }
 
     return () => clearTimeout(timeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
   return (

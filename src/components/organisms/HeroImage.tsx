@@ -32,6 +32,7 @@ export default function HeroImage({}: HeroImageProps) {
 
   useEffect(() => {
     isInView ? setActiveSection('image') : removeActiveSection('image');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
   return (

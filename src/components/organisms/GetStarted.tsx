@@ -36,6 +36,7 @@ export default function GetStarted({ className }: GetStartedProps) {
     isInViewTargetBottom
       ? setActiveSection('getstarted')
       : removeActiveSection('getstarted');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInViewTargetBottom, isInViewTargetMiddle]);
 
   return (
