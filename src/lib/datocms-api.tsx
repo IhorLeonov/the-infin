@@ -62,6 +62,7 @@ export const fetchDataFromCMS = async (): Promise<IDatoCMSData> => {
     body: JSON.stringify({
       query,
     }),
+    next: { revalidate: 1 },
   });
 
   return res.json();

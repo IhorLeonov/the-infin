@@ -15,6 +15,7 @@ export default async function HomePage() {
   const { data } = await fetchDataFromCMS();
 
   const content = data.theInfin.theInfinDetail;
+  console.log(content);
 
   return (
     <div className={styles.page}>
