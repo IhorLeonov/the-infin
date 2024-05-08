@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React from 'react';
 import styles from '../../styles/components/Hero.module.scss';
 import Image from 'next/image';
 import PlusesGrid from '../atoms/PlusesGrid';
 import AnimatedText from '../molecules/AnimatedText';
-// import useTargetInView from '@/hooks/useTargetInView';
 
 import { Section } from '../atoms/Section';
 import { Button } from '../atoms/Button';
@@ -18,9 +17,6 @@ interface HeroProps {
 }
 
 export default function Hero({ content }: HeroProps) {
-  // const targetRef = useRef(null);
-  // const { isInView } = useTargetInView(targetRef);
-
   const heroData = content?.find((item) => item.__typename === 'HeroRecord');
   if (!heroData) notFound();
 
@@ -70,8 +66,6 @@ export default function Hero({ content }: HeroProps) {
             {/* To know your true value, Help others understand theirs. */}
             {heroData.mainTitle}
           </h1>
-
-          {/* <div ref={targetRef} /> */}
 
           {heroData.isPluses && (
             <motion.div

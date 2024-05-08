@@ -72,7 +72,6 @@ export default function Reviews({ className }: ReviewsProps) {
           className={styles.pluses}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          // animate={{ opacity: isInViewTargetMiddle ? 1 : 0 }}
           transition={{ duration: 2, delay: 0.5 }}
         >
           <PlusIcon className={styles.plusIcon} />
