@@ -9,7 +9,12 @@ const __dirname = path.dirname(__filename);
 const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ['www.datocms-assets.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.datocms-assets.com',
+      },
+    ],
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],

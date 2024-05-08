@@ -15,7 +15,7 @@ import { notFound } from 'next/navigation';
 export default async function HomePage() {
   const { data } = await fetchDataFromCMS();
 
-  if (!data.theInfin.theInfinDetail) return notFound();
+  // if (!data.theInfin.theInfinDetail) return notFound();
   const content = data.theInfin.theInfinDetail;
 
   return (
