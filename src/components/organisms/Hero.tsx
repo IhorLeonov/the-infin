@@ -14,14 +14,14 @@ import { IInfinDetail } from '@/lib/api';
 import { notFound } from 'next/navigation';
 
 interface HeroProps {
-  content: IInfinDetail[];
+  content: IInfinDetail[] | undefined;
 }
 
 export default function Hero({ content }: HeroProps) {
   const targetRef = useRef(null);
   const { isInView } = useTargetInView(targetRef);
 
-  const heroData = content.find((item) => item.__typename === 'HeroRecord');
+  const heroData = content?.find((item) => item.__typename === 'HeroRecord');
   if (!heroData) notFound();
 
   return (

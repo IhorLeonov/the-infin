@@ -9,14 +9,14 @@ import Reviews from '@/components/organisms/Reviews';
 import GetStarted from '@/components/organisms/GetStarted';
 
 import { fetchDataFromCMS } from '@/lib/api';
-import { notFound } from 'next/navigation';
 
 export default async function HomePage() {
   const { data } = await fetchDataFromCMS();
+  let content;
 
-  if (!data.theInfin.theInfinDetail) notFound();
-
-  const content = data.theInfin.theInfinDetail;
+  if (!data.theInfin.theInfinDetail) {
+    content = data.theInfin.theInfinDetail;
+  }
 
   return (
     <div className={styles.page}>
