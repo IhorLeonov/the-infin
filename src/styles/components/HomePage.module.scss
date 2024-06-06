@@ -1,6 +1,9 @@
+@import '../_mixins.scss';
+
 .page {
-  padding: 0 12px;
+  @include container;
   position: relative;
+  background-color: $grey;
 }
 
 .cardList {
@@ -8,18 +11,3 @@
   flex-direction: column;
   gap: 12px;
 }
-
-// .card {
-// }
-
-// .card1 {
-// }
-
-// .card2 {
-// }
-
-// .card3 {
-// }
-
-// .card4 {
-// }

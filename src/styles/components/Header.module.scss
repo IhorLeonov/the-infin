@@ -24,13 +24,12 @@
 }
 
 .nav {
-  @include paragraphS;
+  @include p3;
 
   display: grid;
   grid-template-columns: repeat(5, auto);
   grid-template-rows: repeat(1, auto);
 
-  // align-items: center;
   padding-bottom: 6px;
 
   & :nth-child(1),

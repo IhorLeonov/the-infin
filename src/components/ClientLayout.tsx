@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useContext } from 'react';
-import styles from '../../styles/components/ClientLayout.module.scss';
 
-import Header from './Header';
-import Footer from './Footer';
-import WelcomeAnimation from './WelcomeAnimation';
+import Header from './organisms/Header';
+import Footer from './organisms/Footer';
+import WelcomeAnimation from './organisms/WelcomeAnimation';
+
 import { AppContext, IAppContext } from '@/context/app.context';
 
 interface ClientLayotProps {
@@ -21,11 +21,11 @@ export default function ClientLayout({ children }: ClientLayotProps) {
     <>
       <WelcomeAnimation setShowAllDom={setShowAllDom} />
       {showAllDom && (
-        <div className={styles.wrapper}>
+        <>
           <Header />
           <main>{children}</main>
           {showFooter && <Footer />}
-        </div>
+        </>
       )}
     </>
   );

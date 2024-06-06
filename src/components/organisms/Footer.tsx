@@ -11,13 +11,9 @@ export default function Footer({}: FooterProps) {
   return (
     <footer className={styles.footer}>
       <div className={styles.topBlock}>
-        {/* <p className={styles.description}>
-          Employers have to decide on bonuses and promotions based on limited
-          information and often with resentment from the employees. It’s
-          frustrating.
-        </p> */}
         <AnimatedText
           className={styles.description}
+          el="p"
           text="Employers have to decide on bonuses and promotions based on limited
           information and often with resentment from the employees. It’s
           frustrating."
@@ -26,7 +22,7 @@ export default function Footer({}: FooterProps) {
 
         <ul className={styles.list}>
           <li className={styles.listItem}>
-            <h3 className={styles.title}>Pages</h3>
+            <h4 className={styles.title}>Pages</h4>
 
             <a href="#home">Home</a>
             <a href="#business">For Businesses</a>
@@ -34,8 +30,17 @@ export default function Footer({}: FooterProps) {
             <a href="#reviews">Blog</a>
             <a href="#getstarted">Marketing&nbsp;Efforts</a>
           </li>
+
           <li className={styles.listItem}>
-            <h3 className={styles.title}>For Business</h3>
+            <h4 className={styles.title}>For Business</h4>
+
+            <a href="">Benefits</a>
+            <a href="">Performance</a>
+            <a href="">Data</a>
+          </li>
+
+          <li className={styles.listItem}>
+            <h4 className={styles.title}>For Individuals</h4>
 
             <a href="">Label link 1</a>
             <a href="">Label link 2</a>
@@ -43,25 +48,19 @@ export default function Footer({}: FooterProps) {
           </li>
 
           <li className={styles.listItem}>
-            <h3 className={styles.title}>For Individuals</h3>
-
-            <a href="">Label link 1</a>
-            <a href="">Label link 2</a>
-            <a href="">Label link 3</a>
-          </li>
-          <li className={styles.listItem}>
-            <h3 className={styles.title}>Contact</h3>
+            <h4 className={styles.title}>Contact</h4>
 
             <a href="">421-273-0427</a>
             <a href="">info@theinfin.com</a>
           </li>
-          <li className={styles.listItem}>
-            <h3 className={styles.title}>Social Media</h3>
 
-            <a href="">Instagram</a>
+          <li className={styles.listItem}>
+            <h4 className={styles.title}>Social Media</h4>
+
             <a href="">LinkedIn</a>
+            <a href="">Instagram</a>
             <a href="">Facebook</a>
-            <a href="">Twitter</a>
+            <a href="">X</a>
           </li>
         </ul>
       </div>

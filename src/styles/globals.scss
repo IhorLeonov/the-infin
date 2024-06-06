@@ -10,7 +10,7 @@
 }
 
 body {
-  @include paragraphM;
+  @include p2;
   @include cursor-default;
 
   max-width: 1440px;
@@ -18,7 +18,6 @@ body {
   margin-right: auto;
 
   color: $dark;
-  background-color: $grey;
 
   overscroll-behavior: none;
 
@@ -40,7 +39,5 @@ li {
 
 button {
   @include cursor-pointer;
-
-  padding: 0;
   border: none;
 }

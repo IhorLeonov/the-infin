@@ -13,7 +13,7 @@
 }
 
 .title {
-  @include h2;
+  @include h3;
 
   margin-top: 36px;
   max-width: 668px;
@@ -23,6 +23,42 @@
   margin-top: 40px;
 }
 
+.topBlock {
+  display: flex;
+  padding-bottom: 60px;
+}
+
+.smallTitle {
+  @include p4;
+  min-width: 122px;
+  width: 122px;
+}
+
+.hr {
+  width: calc(100% + 30px);
+}
+
+.bigText {
+  max-width: 668px;
+}
+
+.bottomBlock {
+  display: flex;
+
+  & :nth-child(3) {
+    margin-left: 106px;
+  }
+}
+
+.bottomText {
+  @include p3;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 223px;
+}
+
 @media screen and (max-width: 1320px) {
   .section {
     flex-direction: column;
@@ -30,5 +66,35 @@
 
   .box {
     width: auto;
+  }
+
+  .imageWithButton {
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .topBlock,
+  .bottomBlock {
+    flex-direction: column;
+  }
+
+  .bottomBlock {
+    & :nth-child(3) {
+      margin-left: 0;
+      margin-top: 12px;
+    }
+  }
+
+  .bottomText {
+    gap: 0;
+  }
+
+  .smallTitle {
+    margin-bottom: 20px;
+  }
+
+  .imageWithButton {
+    margin-left: 0;
   }
 }

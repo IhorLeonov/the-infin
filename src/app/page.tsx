@@ -2,12 +2,12 @@ import clsx from 'clsx';
 import styles from '../styles/components/HomePage.module.scss';
 
 import Hero from '@/components/organisms/Hero';
-import WhyChoose from '@/components/organisms/WhyChoose';
-import HeroImage from '@/components/organisms/HeroImage';
-import Business from '@/components/organisms/Business';
-import Individuals from '@/components/organisms/Individuals';
-import Reviews from '@/components/organisms/Reviews';
-import GetStarted from '@/components/organisms/GetStarted';
+import WhyChoose from '@/components/organisms/HomeComponents/WhyChoose';
+import HeroImage from '@/components/organisms/HomeComponents/HeroImage';
+import Business from '@/components/organisms/HomeComponents/Business';
+import Individuals from '@/components/organisms/HomeComponents/Individuals';
+import Reviews from '@/components/organisms/HomeComponents/Reviews';
+import GetStarted from '@/components/organisms/HomeComponents/GetStarted';
 
 import { fetchDataFromCMS } from '@/lib/api';
 

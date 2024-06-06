@@ -7,11 +7,11 @@
   flex-direction: column;
   justify-content: space-between;
 
-  margin-top: 86px;
   padding: 30px;
-  padding-top: 60px;
+  padding-top: 146px;
   padding-bottom: 48px;
 
+  background-color: $grey;
   min-height: calc(100vh - 66px);
 }
 
@@ -40,7 +40,7 @@
 .listItem {
   width: 113px;
 
-  @include paragraphS;
+  @include p3;
 
   & a {
     display: block;
@@ -52,7 +52,7 @@
 }
 
 .title {
-  @include h3;
+  @include p4;
 
   margin-bottom: 16px;
 }

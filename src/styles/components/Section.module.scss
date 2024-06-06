@@ -1,17 +1,23 @@
 .section {
   width: 100%;
-  border-radius: 30px;
 }
 
 .filled {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 30px;
+  border-radius: 30px;
 }
 
 .ghost {
-  padding-bottom: 30px;
   padding-left: 18px;
   padding-right: 18px;
+}
+
+@media screen and (max-width: 767px) {
+  .filled {
+    padding: 20px 16px;
+  }
+  .ghost {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
 }

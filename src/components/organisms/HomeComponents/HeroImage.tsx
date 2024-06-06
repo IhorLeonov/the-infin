@@ -1,15 +1,15 @@
 'use client';
 
 import React, { useContext, useEffect, useRef } from 'react';
-import styles from '../../styles/components/HeroImage.module.scss';
+import styles from '../../../styles/components/HeroImage.module.scss';
 
-import { Button } from '../atoms/Button';
+import { Button } from '../../atoms/Button';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { AppContext, IAppContext } from '@/context/app.context';
 
 import Image from 'next/image';
 import useTargetInView from '@/hooks/useTargetInView';
-import PlayIcon from '../../../public/icons/play.svg';
+import PlayIcon from '../../../../public/icons/play.svg';
 
 interface HeroImageProps {}
 

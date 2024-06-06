@@ -1,23 +1,26 @@
 'use client';
 
 import React, { useContext, useEffect, useRef } from 'react';
-import styles from '../../styles/components/GetStarted.module.scss';
+import styles from '../../../styles/components/GetStarted.module.scss';
 import Image from 'next/image';
 import clsx from 'clsx';
 
-import { CardTitle } from '../molecules/CardTitle';
-import { Section } from '../atoms/Section';
-import { Button } from '../atoms/Button';
+import { CardTitle } from '../../molecules/CardTitle';
+import { Section } from '../../atoms/Section';
+import { Button } from '../../atoms/Button';
 import { CardProps } from '@/lib/types';
 import { motion } from 'framer-motion';
-
-import girlImage from '../../../public/images/girl.jpeg';
-import boyImage from '../../../public/images/boy.jpg';
-import PlusesIcon from '../../../public/icons/plusGroup.svg';
-import useTargetInView from '@/hooks/useTargetInView';
 import { AppContext, IAppContext } from '@/context/app.context';
-import AnimatedLineText from '../molecules/AnimatedLineText';
-import AnimatedText from '../molecules/AnimatedText';
+
+import girlImage from '../../../../public/images/girl.jpeg';
+import boyImage from '../../../../public/images/boy.jpg';
+import PlusesIcon from '../../../../public/icons/plus-group.svg';
+import PlusesSmallIcon from '../../../../public/icons/pluses-group-small.svg';
+
+import useTargetInView from '@/hooks/useTargetInView';
+import AnimatedLineText from '../../molecules/AnimatedLineText';
+import AnimatedText from '../../molecules/AnimatedText';
+import useCheckIsMobile from '@/hooks/useCheckIsMobile';
 
 interface GetStartedProps extends CardProps {}
 
@@ -25,6 +28,7 @@ export default function GetStarted({ className }: GetStartedProps) {
   const { setActiveSection, removeActiveSection } = useContext(
     AppContext,
   ) as IAppContext;
+  const { isTablet } = useCheckIsMobile();
 
   const targetMiddle = useRef(null);
   const targetBottom = useRef(null);
@@ -46,23 +50,24 @@ export default function GetStarted({ className }: GetStartedProps) {
       style={{ paddingBottom: 160 }}
       id="getstarted"
     >
-      <CardTitle showTitle={false} cardNumber="03" cardTitle="Get started" />
+      <CardTitle
+        className={styles.cardTitle}
+        showTitle={false}
+        cardNumber="03"
+        cardTitle="Get started"
+      />
 
-      {/* <p className={styles.text}>What can The INFIN do for you?</p> */}
       <AnimatedText
-        className={styles.text}
+        className={styles.smallText}
         text={['What can The INFIN do for you?']}
         delay={0.5}
       />
 
-      {/* <strong className={styles.textStrong} ref={targetMiddle}>
-        Ready to get started
-      </strong> */}
       <div ref={targetMiddle} className={styles.targetMiddle}>
         <AnimatedLineText
-          className={styles.textStrong}
-          el="strong"
-          text={['Ready to', 'get started']}
+          className={styles.mainTitle}
+          el="h1"
+          text={['get started']}
           once
         />
       </div>
@@ -74,23 +79,11 @@ export default function GetStarted({ className }: GetStartedProps) {
       <div ref={targetBottom} />
 
       <div className={clsx(styles.imageContainer, styles.girlImageContainer)}>
-        <Image
-          className={styles.image}
-          src={girlImage}
-          width={223}
-          height={223}
-          alt="girl"
-        />
+        <Image className={styles.image} src={girlImage} alt="girl" />
       </div>
 
       <div className={clsx(styles.imageContainer, styles.boyImageContainer)}>
-        <Image
-          className={styles.image}
-          src={boyImage}
-          width={223}
-          height={223}
-          alt="boy"
-        />
+        <Image className={styles.image} src={boyImage} alt="boy" />
       </div>
 
       <motion.div
@@ -98,8 +91,17 @@ export default function GetStarted({ className }: GetStartedProps) {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 2, delay: 0.5 }}
       >
-        <PlusesIcon className={styles.plusesLeft} />
-        <PlusesIcon className={styles.plusesRight} />
+        {isTablet ? (
+          <>
+            <PlusesSmallIcon className={styles.plusesLeft} />
+            <PlusesSmallIcon className={styles.plusesRight} />
+          </>
+        ) : (
+          <>
+            <PlusesIcon className={styles.plusesLeft} />
+            <PlusesIcon className={styles.plusesRight} />
+          </>
+        )}
       </motion.div>
     </Section>
   );

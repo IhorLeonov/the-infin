@@ -15,7 +15,7 @@
 }
 
 .title {
-  @include h2;
+  @include h3;
 
   margin-top: 36px;
   max-width: 489px;
@@ -45,7 +45,7 @@
 }
 
 .description {
-  @include paragraphS;
+  @include p3;
 
   margin-top: 122px;
   width: 283px;

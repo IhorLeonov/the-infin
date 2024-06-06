@@ -23,12 +23,12 @@ export default function Hero({ content }: HeroProps) {
   return (
     <Section id="home" className={styles.hero} type="ghost">
       <div className={styles.topBlock}>
-        <h3 className={styles.smallTitle}>
+        <p className={styles.smallText}>
           <span>
             {/* Web + Mobile app */}
             {heroData?.imageTitle}
           </span>
-        </h3>
+        </p>
 
         <motion.div className={styles.imageContainer}>
           <Image
@@ -45,7 +45,7 @@ export default function Hero({ content }: HeroProps) {
 
       <div className={styles.bottomBlock}>
         <AnimatedText
-          el="span"
+          el="p"
           className={styles.description}
           // text="A market-based assessment of your contribution."
           text={heroData.description}
@@ -62,10 +62,10 @@ export default function Hero({ content }: HeroProps) {
           transition={{ delay: 0.5, duration: 1.5 }}
           className={styles.titleBox}
         >
-          <h1 className={styles.mainTitle}>
+          <h2 className={styles.mainTitle}>
             {/* To know your true value, Help others understand theirs. */}
             {heroData.mainTitle}
-          </h1>
+          </h2>
 
           {heroData.isPluses && (
             <motion.div

@@ -5,14 +5,12 @@
 
   display: grid;
   grid-template-columns: auto 1fr;
-  margin-top: 130px;
-  margin-bottom: 50px;
+  padding-top: 150px;
+  padding-bottom: 160px;
 }
 
 .title {
-  @include h2;
-  // font-size: medium;
-  // line-height: normal;
+  @include h3;
 
   width: 359px;
   grid-column: 1;
@@ -22,7 +20,10 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding-left: 104px;
+  margin-left: auto;
+
+  max-width: 951px;
+  width: 951px;
 }
 
 .plusesContainer {
@@ -31,28 +32,108 @@
   bottom: 30px;
 }
 
-// .pluses {
-//   position: absolute;
-//   left: 18px;
-//   bottom: 30px;
-// }
+.card {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
 
-@media screen and (max-width: 950px) {
+.hr {
+  position: relative;
+  width: calc(100% + 30px) !important;
+}
+
+.smallTitle {
+  @include p4;
+  min-width: 113px;
+  width: 113px;
+}
+
+.rightBlock {
+  display: flex;
+}
+
+.text {
+  max-width: 432px;
+  margin-right: 154px;
+}
+
+.imageContainer {
+  position: relative;
+  margin-left: auto;
+
+  min-width: 223px;
+  width: 223px;
+  height: 223px;
+
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.image {
+  border-radius: 20px;
+  width: 100% !important;
+  height: 100% !important;
+
+  object-position: top;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1320px) {
+  .cardList {
+    width: auto;
+  }
+  .text {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
   .section {
     grid-template-columns: 1fr;
   }
 
   .cardList {
-    padding-left: 0;
+    margin-left: 0;
+    max-width: 100%;
   }
 
-  .pluses {
-    display: none;
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .hr {
+    width: 100% !important;
+  }
+
+  .rightBlock {
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 400px) {
-  .title {
-    width: auto;
+@media screen and (max-width: 767px) {
+  .section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .rightBlock {
+    flex-direction: column;
+  }
+  .text {
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+  .imageContainer {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .imageContainer {
+    margin-top: 20px;
+    margin-left: 0;
+    width: 100%;
+    height: auto;
   }
 }

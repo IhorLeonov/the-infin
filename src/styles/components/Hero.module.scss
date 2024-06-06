@@ -35,9 +35,8 @@
 }
 
 .mainTitle {
-  @include h1;
+  @include h2;
 
-  // max-width: 894px;
   max-width: 910px;
   background-color: $grey;
 
@@ -58,8 +57,8 @@
   transform: translate(48%, -60%);
 }
 
-.smallTitle {
-  @include h3;
+.smallText {
+  @include p4;
 
   span {
     display: block;
@@ -67,17 +66,16 @@
   }
 }
 
-.smallTitle,
+.description {
+  @include p4;
+  display: inline-block;
+  opacity: 1;
+}
+
+.smallText,
 .description {
   width: 113px;
   margin-right: 25px;
-}
-
-.description {
-  font-size: 12px;
-  line-height: 16px;
-
-  display: inline-block;
 }
 
 .button {
