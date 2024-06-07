@@ -12,8 +12,8 @@ import { CardProps } from '@/lib/types';
 import { motion } from 'framer-motion';
 import { AppContext, IAppContext } from '@/context/app.context';
 
-import girlImage from '../../../public/images/girl.jpeg';
-import boyImage from '../../../public/images/boy.jpg';
+import girlImage from '../../../public/images/girl.png';
+import boyImage from '../../../public/images/boy.png';
 import PlusesIcon from '../../../public/icons/plus-group.svg';
 import PlusesSmallIcon from '../../../public/icons/pluses-group-small.svg';
 

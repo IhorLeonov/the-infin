@@ -47,6 +47,7 @@ export default function ImageWithButton({
           width={421}
           height={636}
           loading="lazy"
+          quality={100}
           alt={imageAlt}
         />
       </motion.div>

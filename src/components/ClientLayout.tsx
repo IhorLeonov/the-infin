@@ -15,15 +15,13 @@ export default function ClientLayout({ children }: ClientLayotProps) {
 
   return (
     <>
-      {/* <WelcomeAnimation setShowAllDom={setShowAllDom} /> */}
-      {showAllDom ||
-        (!showAllDom && (
-          <>
-            <Header />
-            {children}
-            {/* <Footer /> */}
-          </>
-        ))}
+      <WelcomeAnimation setShowAllDom={setShowAllDom} />
+      {showAllDom && (
+        <>
+          <Header />
+          {children}
+        </>
+      )}
     </>
   );
 }
