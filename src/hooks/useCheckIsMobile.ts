@@ -17,7 +17,7 @@ const useCheckIsMobile = () => {
     };
   }, []);
 
-  const isMobile = width <= 767;
+  const isMobile = width <= 768;
   const isTablet = width <= 1080;
 
   return { isTablet, isMobile };

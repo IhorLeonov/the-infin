@@ -17,11 +17,13 @@
   border-radius: 20px;
 
   overflow: hidden;
-  max-width: 201px;
+  width: 201px;
 }
 
 .image {
   border-radius: 20px;
+  width: 100%;
+  height: auto;
 }
 
 .bottomBlock {
@@ -81,40 +83,60 @@
 .button {
   margin-left: auto;
   align-self: end;
+  width: 179px;
 }
 
-@media screen and (max-width: 1340px) {
-  .topBlock,
-  .bottomBlock {
-    display: block;
+@media screen and (max-width: $maxTablet) {
+  .plusesGrid {
+    transform: translate(0%, -55%);
   }
 
-  .imageContainer,
-  .titleBox {
-    margin-top: 20px;
+  .hero {
+    padding-top: 109px;
+  }
+
+  .bottomBlock {
+    flex-direction: column;
+  }
+
+  .mainTitle {
+    margin-top: 16px;
   }
 
   .button {
     margin-top: 30px;
-    margin-right: auto;
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .hero {
-    padding-top: 400px;
+@media screen and (max-width: $maxMobile) {
+  .plusesGrid {
+    transform: translate(15%, -20%);
   }
-}
 
-@media screen and (max-width: 575px) {
-  .hero {
-    padding-top: 150px;
+  .mainTitle {
+    max-width: 530px;
   }
-}
 
-@media screen and (max-width: 455px) {
-  .button {
-    margin-left: auto;
+  .smallText {
+    margin-right: 19px;
+  }
+
+  .imageContainer {
+    width: 100%;
+  }
+
+  .description {
+    width: 93px;
     margin-right: 0;
+  }
+
+  .button {
+    width: 211px;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .plusesGrid {
+    transform: translate(17%, -30%);
   }
 }

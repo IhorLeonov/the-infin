@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useContext, useEffect, useRef } from 'react';
-import styles from '../../../styles/components/HeroImage.module.scss';
+import styles from '../../styles/components/LargeImage.module.scss';
 
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { AppContext, IAppContext } from '@/context/app.context';
@@ -9,10 +9,19 @@ import { AppContext, IAppContext } from '@/context/app.context';
 import Image from 'next/image';
 import useTargetInView from '@/hooks/useTargetInView';
 import useCheckIsMobile from '@/hooks/useCheckIsMobile';
+import { TypeActiveSection } from '@/lib/types';
 
-interface HeroImageProps {}
+interface HeroImageProps {
+  sectionName: TypeActiveSection;
+  mobileImage: string;
+  desctopImage: string;
+}
 
-export default function HeroImage({}: HeroImageProps) {
+export default function HeroImage({
+  sectionName,
+  mobileImage,
+  desctopImage,
+}: HeroImageProps) {
   const { isMobile } = useCheckIsMobile();
   const { setActiveSection, removeActiveSection } = useContext(
     AppContext,
@@ -31,9 +40,7 @@ export default function HeroImage({}: HeroImageProps) {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.25]);
 
   useEffect(() => {
-    isInView
-      ? setActiveSection('home-image')
-      : removeActiveSection('home-image');
+    isInView ? setActiveSection(sectionName) : removeActiveSection(sectionName);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
@@ -44,7 +51,7 @@ export default function HeroImage({}: HeroImageProps) {
         {isMobile ? (
           <Image
             className={styles.image}
-            src={'/images/presentation-mobile.png'}
+            src={mobileImage}
             alt="presentation"
             quality={100}
             width={1416}
@@ -54,7 +61,7 @@ export default function HeroImage({}: HeroImageProps) {
         ) : (
           <Image
             className={styles.image}
-            src={'/images/presentation.png'}
+            src={desctopImage}
             alt="presentation"
             quality={100}
             width={355}
@@ -63,13 +70,6 @@ export default function HeroImage({}: HeroImageProps) {
           />
         )}
       </motion.div>
-
-      {/* <Button className={styles.button} appearance="primary">
-        <span className={styles.btnText}>Play</span>
-        <div ref={targetRef} className={styles.circle}>
-          <PlayIcon width={16} height={16} />
-        </div>
-      </Button> */}
     </div>
   );
 }

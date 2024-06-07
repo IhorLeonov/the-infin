@@ -7,52 +7,61 @@
   border-radius: 30px;
   overflow: hidden;
 
-  & .button {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+  // & .button {
+  //   position: absolute;
+  //   bottom: 30px;
+  //   left: 50%;
+  //   transform: translateX(-50%);
 
-    display: flex;
-    align-items: center;
+  //   display: flex;
+  //   align-items: center;
 
-    width: 185px;
+  //   width: 185px;
 
-    &:hover .circle {
-      background-color: $dark;
-    }
+  //   &:hover .circle {
+  //     background-color: $dark;
+  //   }
 
-    &:hover svg {
-      fill: $accent;
-    }
-  }
+  //   &:hover svg {
+  //     fill: $accent;
+  //   }
+  // }
 }
 
-.btnText {
-  margin-left: 28px;
+.imageContainer {
+  width: 100%;
 }
 
-.circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-left: auto;
-  width: 66px;
-  height: 66px;
-
-  border-radius: 50%;
-  background-color: $accent;
-  transition: all 0.4s;
+.image {
+  width: 100%;
+  height: auto;
 }
 
-@media screen and (max-width: 455px) {
-  .button {
-    position: static;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+// .btnText {
+//   margin-left: 28px;
+// }
 
-    transform: none;
-  }
-}
+// .circle {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+
+//   margin-left: auto;
+//   width: 66px;
+//   height: 66px;
+
+//   border-radius: 50%;
+//   background-color: $accent;
+//   transition: all 0.4s;
+// }
+
+// @media screen and (max-width: 455px) {
+//   .button {
+//     position: static;
+//     margin-top: 20px;
+//     margin-left: auto;
+//     margin-right: auto;
+
+//     transform: none;
+//   }
+// }

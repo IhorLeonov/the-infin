@@ -45,7 +45,7 @@ export default function Header({}: HeaderProps) {
   };
 
   const colorCondition =
-    activeSection?.includes('reviews') || activeSection?.includes('image');
+    activeSection?.includes('reviews') || activeSection?.includes('home-image');
 
   return (
     <>
