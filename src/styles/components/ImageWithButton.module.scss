@@ -1,10 +1,8 @@
 .wrapper {
   position: relative;
-  max-width: 421px;
-  max-height: 636px;
 
-  min-width: 421px;
-  min-height: 636px;
+  width: 421px;
+  height: 636px;
 
   border-radius: 20px;
 
@@ -21,11 +19,6 @@
 
 .image {
   border-radius: 20px;
-}
-
-@media screen and (max-width: 640px) {
-  .wrapper {
-    min-width: auto;
-    min-height: auto;
-  }
+  width: 100% !important;
+  height: auto !important;
 }

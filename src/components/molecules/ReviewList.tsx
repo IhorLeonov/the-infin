@@ -3,6 +3,7 @@ import styles from '../../styles/components/ReviewList.module.scss';
 import clsx from 'clsx';
 
 import { IReview } from '@/lib/types';
+
 import ReviewItem from './ReviewItem';
 import ArrowIcon from '../../../public/icons/arrow.svg';
 

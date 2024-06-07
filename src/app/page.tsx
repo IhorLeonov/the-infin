@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import styles from '../styles/components/HomePage.module.scss';
 
 import Hero from '@/components/organisms/Hero';
@@ -7,7 +6,7 @@ import HeroImage from '@/components/organisms/HomeComponents/HeroImage';
 import Business from '@/components/organisms/HomeComponents/Business';
 import Individuals from '@/components/organisms/HomeComponents/Individuals';
 import Reviews from '@/components/organisms/HomeComponents/Reviews';
-import GetStarted from '@/components/organisms/HomeComponents/GetStarted';
+import BottomComponent from '@/components/BottomComponent';
 
 import { fetchDataFromCMS } from '@/lib/api';
 
@@ -18,27 +17,19 @@ export default async function HomePage() {
 
   return (
     <div className={styles.page}>
-      <Hero content={content} />
-      <HeroImage />
-      <WhyChoose />
+      <main className={styles.main}>
+        <Hero content={content} />
+        <HeroImage />
+        <WhyChoose />
 
-      <div className={styles.cardList}>
-        <div className={clsx(styles.card, styles.card1)}>
+        <div className={styles.cardList}>
           <Business />
-        </div>
-
-        <div className={clsx(styles.card, styles.card2)}>
           <Individuals />
-        </div>
-
-        <div className={clsx(styles.card, styles.card3)}>
           <Reviews />
         </div>
+      </main>
 
-        <div className={clsx(styles.card, styles.card4)}>
-          <GetStarted />
-        </div>
-      </div>
+      <BottomComponent />
     </div>
   );
 }

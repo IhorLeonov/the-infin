@@ -17,24 +17,24 @@ interface HeroProps {
 }
 
 export default function Hero({ content }: HeroProps) {
-  const heroData = content?.find((item) => item.__typename === 'HeroRecord');
-  if (!heroData) notFound();
+  // const heroData = content?.find((item) => item.__typename === 'HeroRecord');
+  // if (!heroData) notFound();
 
   return (
     <Section id="home" className={styles.hero} type="ghost">
       <div className={styles.topBlock}>
         <p className={styles.smallText}>
           <span>
-            {/* Web + Mobile app */}
-            {heroData?.imageTitle}
+            Web + Mobile app
+            {/* {heroData?.imageTitle} */}
           </span>
         </p>
 
         <motion.div className={styles.imageContainer}>
           <Image
             className={styles.image}
-            // src="/images/hand-phone.png"
-            src={heroData.smallImage.url}
+            src="/images/hand-phone.png"
+            // src={heroData.smallImage.url}
             width={201}
             height={160}
             alt="hand with phone"
@@ -47,8 +47,8 @@ export default function Hero({ content }: HeroProps) {
         <AnimatedText
           el="p"
           className={styles.description}
-          // text="A market-based assessment of your contribution."
-          text={heroData.description}
+          text="A market-based assessment of your contribution."
+          // text={heroData.description}
           delay={1.5}
           once
         />
@@ -63,26 +63,25 @@ export default function Hero({ content }: HeroProps) {
           className={styles.titleBox}
         >
           <h2 className={styles.mainTitle}>
-            {/* To know your true value, Help others understand theirs. */}
-            {heroData.mainTitle}
+            To know your true value, Help others understand theirs.
+            {/* {heroData.mainTitle} */}
           </h2>
 
-          {heroData.isPluses && (
-            <motion.div
-              className={styles.plusesGrid}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              // animate={{ opacity: isInView ? 1 : 0 }}
-              transition={{ duration: 3, delay: 1 }}
-            >
-              <PlusesGrid />
-            </motion.div>
-          )}
+          {/* {heroData.isPluses && ( */}
+          <motion.div
+            className={styles.plusesGrid}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 3, delay: 1 }}
+          >
+            <PlusesGrid />
+          </motion.div>
+          {/* )} */}
         </motion.div>
 
         <Button className={styles.button} appearance="primary">
-          {/* Schedule a demo */}
-          {heroData.buttonText}
+          Schedule a demo
+          {/* {heroData.buttonText} */}
         </Button>
       </div>
     </Section>

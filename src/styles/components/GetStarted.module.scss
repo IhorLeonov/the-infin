@@ -79,7 +79,14 @@
   rotate: 180deg;
 }
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: $maxTablet) {
+  .imageContainer {
+    width: 156px;
+    height: 156px;
+  }
+}
+
+@media screen and (max-width: $maxMobile) {
   .section {
     padding: 220px 16px 272px 16px !important;
   }
@@ -100,11 +107,24 @@
     width: 156px;
     height: 156px;
   }
-}
 
-@media screen and (max-width: 410px) {
-  .plusesLeft,
+  .plusesLeft {
+    left: 16px;
+    bottom: 16px;
+  }
+
   .plusesRight {
-    width: 105px;
+    right: 16px;
+    top: 16px;
+  }
+
+  .girlImageContainer {
+    left: 16px;
+    top: 16px;
+  }
+
+  .boyImageContainer {
+    right: 16px;
+    bottom: 16px;
   }
 }

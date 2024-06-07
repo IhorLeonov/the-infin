@@ -2,8 +2,8 @@ import React from 'react';
 import styles from '../../styles/components/Footer.module.scss';
 
 import ThinksebIcon from '../../../public/icons/thinkseb.svg';
-import Logo from '../atoms/LogoIcon';
 import AnimatedText from '../molecules/AnimatedText';
+import Logo from '../atoms/Logo';
 
 interface FooterProps {}
 
@@ -12,11 +12,9 @@ export default function Footer({}: FooterProps) {
     <footer className={styles.footer}>
       <div className={styles.topBlock}>
         <AnimatedText
-          className={styles.description}
+          className={styles.text}
           el="p"
-          text="Employers have to decide on bonuses and promotions based on limited
-          information and often with resentment from the employees. It’s
-          frustrating."
+          text="Take part in the evolution of Human Capital."
           once
         />
 
@@ -32,7 +30,7 @@ export default function Footer({}: FooterProps) {
           </li>
 
           <li className={styles.listItem}>
-            <h4 className={styles.title}>For Business</h4>
+            <h4 className={styles.title}>Business page</h4>
 
             <a href="">Benefits</a>
             <a href="">Performance</a>
@@ -65,8 +63,6 @@ export default function Footer({}: FooterProps) {
         </ul>
       </div>
 
-      <Logo className={styles.logo} />
-
       <div className={styles.thinkseb}>
         <ThinksebIcon />
         <div className={styles.copyright}>
@@ -74,6 +70,8 @@ export default function Footer({}: FooterProps) {
           ThinkSeb
         </div>
       </div>
+
+      <Logo className={styles.logo} />
     </footer>
   );
 }

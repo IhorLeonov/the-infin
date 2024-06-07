@@ -1,3 +1,5 @@
+@import '../variables';
+
 .reviewer {
   display: flex;
   margin-top: 24px;
@@ -24,4 +26,10 @@
   font-weight: 500;
   line-height: 22px;
   opacity: 0.4;
+}
+
+@media screen and (max-width: $maxMobile) {
+  .reviewer {
+    margin-top: 20px;
+  }
 }

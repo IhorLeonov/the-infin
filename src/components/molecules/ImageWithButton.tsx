@@ -46,7 +46,6 @@ export default function ImageWithButton({
           src={imageSrc}
           width={421}
           height={636}
-          layout="responsive"
           loading="lazy"
           alt={imageAlt}
         />

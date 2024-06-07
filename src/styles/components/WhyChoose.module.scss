@@ -6,7 +6,8 @@
   display: grid;
   grid-template-columns: auto 1fr;
   padding-top: 150px;
-  padding-bottom: 160px;
+  margin-bottom: 130px;
+  padding-bottom: 30px;
 }
 
 .title {
@@ -88,9 +89,12 @@
   }
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: $maxTablet) {
   .section {
     grid-template-columns: 1fr;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    margin-bottom: 80px;
   }
 
   .cardList {
@@ -109,13 +113,13 @@
   .rightBlock {
     width: 100%;
   }
+
+  .plusesContainer {
+    bottom: 10px;
+  }
 }
 
-@media screen and (max-width: 767px) {
-  .section {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
+@media screen and (max-width: $maxMobile) {
   .rightBlock {
     flex-direction: column;
   }
@@ -124,12 +128,6 @@
     max-width: 100%;
     width: 100%;
   }
-  .imageContainer {
-    margin-top: 20px;
-  }
-}
-
-@media screen and (max-width: 540px) {
   .imageContainer {
     margin-top: 20px;
     margin-left: 0;

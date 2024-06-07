@@ -63,9 +63,22 @@
   opacity: 0.08;
 }
 
-@media screen and (max-width: 1320px) {
+@media screen and (max-width: $maxMobile) {
   .section {
     display: block;
-    padding-bottom: 30px;
+    padding-bottom: 16px;
+  }
+
+  .title {
+    margin-top: 30px;
+  }
+
+  .pluses {
+    margin-top: 30px;
+  }
+
+  .description {
+    margin-top: 40px;
+    width: 100%;
   }
 }

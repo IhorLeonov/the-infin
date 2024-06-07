@@ -7,12 +7,11 @@
   flex-direction: column;
   justify-content: space-between;
 
-  padding: 30px;
-  padding-top: 146px;
-  padding-bottom: 48px;
+  padding-top: 126px;
+  padding-left: 18px;
+  padding-right: 18px;
 
-  background-color: $grey;
-  min-height: calc(100vh - 66px);
+  min-height: calc(100vh);
 }
 
 .topBlock {
@@ -20,21 +19,20 @@
   margin-bottom: 120px;
 }
 
-.description {
-  max-width: 283px;
+.text {
+  min-width: 220px;
+  width: 220px;
+
   opacity: 0.4;
 }
 
 .list {
-  display: flex;
-
-  justify-content: space-between;
-  margin-left: 91px;
+  display: grid;
+  grid-template-columns: repeat(5, 113px);
   width: 100%;
+  justify-content: space-between;
 
-  & :last-child {
-    width: 90px;
-  }
+  margin-left: 154px;
 }
 
 .listItem {
@@ -53,12 +51,12 @@
 
 .title {
   @include p4;
-
   margin-bottom: 16px;
 }
 
 .logo {
-  margin-top: auto;
+  position: relative;
+  bottom: 0;
 
   max-width: 100%;
   width: auto;
@@ -67,8 +65,8 @@
 
 .thinkseb {
   position: absolute;
-  left: 30px;
-  bottom: 48px;
+  left: 18px;
+  bottom: 0;
 
   display: flex;
   align-items: center;
@@ -77,7 +75,6 @@
 
 .copyright {
   font-size: 12px;
-  font-style: normal;
   font-weight: 500;
   line-height: 16px;
 }
@@ -86,17 +83,13 @@
   opacity: 0.4;
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: $maxTablet) {
   .footer {
-    min-height: calc(100vh - 66px);
+    padding-top: 60px;
   }
 
   .topBlock {
-    display: block;
-  }
-
-  .description {
-    max-width: none;
+    flex-direction: column;
   }
 
   .list {
@@ -105,17 +98,24 @@
   }
 
   .thinkseb {
-    margin-top: 24px;
     position: static;
+    margin-top: auto;
+    margin-bottom: 30px;
   }
 }
 
-@media screen and (max-width: 640px) {
-  .list {
-    display: block;
+@media screen and (max-width: $maxMobile) {
+  .footer {
+    padding-left: 4px;
+    padding-right: 4px;
   }
-
-  .title {
-    margin-top: 16px;
+  .list {
+    grid-template-columns: repeat(2, 113px);
+    grid-template-rows: repeat(3, auto);
+    row-gap: 40px;
+    max-width: 326px;
+  }
+  .thinkseb {
+    margin-bottom: 20px;
   }
 }

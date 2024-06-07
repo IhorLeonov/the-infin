@@ -1,13 +1,23 @@
 @import '../_mixins.scss';
+@import '../variables';
 
 .page {
+  background-color: $grey;
+}
+
+.main {
   @include container;
   position: relative;
-  background-color: $grey;
 }
 
 .cardList {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+@media screen and (max-width: $maxMobile) {
+  .cardList {
+    gap: 10px;
+  }
 }

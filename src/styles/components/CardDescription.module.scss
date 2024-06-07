@@ -1,0 +1,80 @@
+@import '../variables';
+@import '../mixins';
+
+.cardDescription {
+  margin-top: 40px;
+}
+
+.topBlock {
+  display: flex;
+  padding-bottom: 60px;
+}
+
+.topTitle,
+.bottomTitle {
+  @include p4;
+  min-width: 88px;
+  width: 88px;
+  margin-right: 34px;
+}
+
+.hr {
+  width: calc(100% + 30px) !important;
+}
+
+.bigText {
+  max-width: 668px;
+}
+
+.bottomBlock {
+  display: flex;
+}
+
+.bottomTextLeft,
+.bottomTextRight {
+  @include p3;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 223px;
+}
+
+.bottomTextRight {
+  margin-left: 106px;
+}
+
+@media screen and (max-width: $maxTablet) {
+  .hr {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: $maxMobile) {
+  .topBlock,
+  .bottomBlock {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .topTitle,
+  .bottomTitle {
+    min-width: auto;
+    width: auto;
+    margin-right: 0;
+  }
+
+  .topTitle,
+  .bottomTitle {
+    margin-bottom: 10px;
+  }
+
+  .bottomTextLeft,
+  .bottomTextRight {
+    max-width: 100%;
+  }
+
+  .bottomTextRight {
+    margin-left: 0;
+  }
+}

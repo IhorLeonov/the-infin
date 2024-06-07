@@ -1,8 +1,14 @@
+//colors
 $dark: #121212;
 $light: #fff;
 $accent: #ffcd00;
 $grey: #c1c1c1;
 $darkGrey: #6b6b6b;
+
+//breakpoints
+$maxMobile: '768px';
+$maxTablet: '1080px';
+$maxDesktop: '1440px';
 
 :export {
   dark: $dark;

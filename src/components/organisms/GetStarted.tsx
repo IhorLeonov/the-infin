@@ -1,25 +1,25 @@
 'use client';
 
 import React, { useContext, useEffect, useRef } from 'react';
-import styles from '../../../styles/components/GetStarted.module.scss';
+import styles from '../../styles/components/GetStarted.module.scss';
 import Image from 'next/image';
 import clsx from 'clsx';
 
-import { CardTitle } from '../../molecules/CardTitle';
-import { Section } from '../../atoms/Section';
-import { Button } from '../../atoms/Button';
+import { CardTitle } from '../molecules/CardTitle';
+import { Section } from '../atoms/Section';
+import { Button } from '../atoms/Button';
 import { CardProps } from '@/lib/types';
 import { motion } from 'framer-motion';
 import { AppContext, IAppContext } from '@/context/app.context';
 
-import girlImage from '../../../../public/images/girl.jpeg';
-import boyImage from '../../../../public/images/boy.jpg';
-import PlusesIcon from '../../../../public/icons/plus-group.svg';
-import PlusesSmallIcon from '../../../../public/icons/pluses-group-small.svg';
+import girlImage from '../../../public/images/girl.jpeg';
+import boyImage from '../../../public/images/boy.jpg';
+import PlusesIcon from '../../../public/icons/plus-group.svg';
+import PlusesSmallIcon from '../../../public/icons/pluses-group-small.svg';
 
 import useTargetInView from '@/hooks/useTargetInView';
-import AnimatedLineText from '../../molecules/AnimatedLineText';
-import AnimatedText from '../../molecules/AnimatedText';
+import AnimatedLineText from '../molecules/AnimatedLineText';
+import AnimatedText from '../molecules/AnimatedText';
 import useCheckIsMobile from '@/hooks/useCheckIsMobile';
 
 interface GetStartedProps extends CardProps {}
@@ -28,7 +28,7 @@ export default function GetStarted({ className }: GetStartedProps) {
   const { setActiveSection, removeActiveSection } = useContext(
     AppContext,
   ) as IAppContext;
-  const { isTablet } = useCheckIsMobile();
+  const { isMobile } = useCheckIsMobile();
 
   const targetMiddle = useRef(null);
   const targetBottom = useRef(null);
@@ -91,7 +91,7 @@ export default function GetStarted({ className }: GetStartedProps) {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 2, delay: 0.5 }}
       >
-        {isTablet ? (
+        {isMobile ? (
           <>
             <PlusesSmallIcon className={styles.plusesLeft} />
             <PlusesSmallIcon className={styles.plusesRight} />
