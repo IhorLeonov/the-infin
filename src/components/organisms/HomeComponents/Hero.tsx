@@ -1,13 +1,13 @@
 'use client';
 
 import React from 'react';
-import styles from '../../styles/components/Hero.module.scss';
+import styles from '../../../styles/components/Hero.module.scss';
 import Image from 'next/image';
-import PlusesGrid from '../atoms/PlusesGrid';
-import AnimatedText from '../molecules/AnimatedText';
+import PlusesGrid from '../../atoms/PlusesGrid';
+import AnimatedText from '../../molecules/AnimatedText';
 
-import { Section } from '../atoms/Section';
-import { Button } from '../atoms/Button';
+import { Section } from '../../atoms/Section';
+import { Button } from '../../atoms/Button';
 import { motion } from 'framer-motion';
 import { IInfinDetail } from '@/lib/api';
 import { notFound } from 'next/navigation';

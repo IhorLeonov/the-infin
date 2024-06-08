@@ -1,5 +1,6 @@
 //colors
 $dark: #121212;
+$darkOpacity: #12121229;
 $light: #fff;
 $accent: #ffcd00;
 $grey: #c1c1c1;
@@ -16,4 +17,5 @@ $maxDesktop: '1440px';
   accent: $accent;
   grey: $grey;
   darkGrey: $darkGrey;
+  darkOpacity: $darkOpacity;
 }

@@ -2,16 +2,20 @@
 @import '../mixins';
 
 .header {
+  position: fixed;
+  z-index: 3;
   display: flex;
-  justify-content: space-between;
-
+  flex-direction: column;
   padding: 30px 30px 0 30px;
 
-  z-index: 3;
-  position: fixed;
   width: 100%;
   max-width: 1440px;
   backdrop-filter: blur(3px);
+}
+
+.topBlock {
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo svg {
@@ -64,7 +68,6 @@
 
   &:hover,
   &:focus {
-    color: $dark;
     background-color: $accent;
     border-color: transparent;
   }
@@ -86,20 +89,88 @@
 
 @media screen and (max-width: $maxTablet) {
   .header {
-    flex-direction: column;
-    gap: 24px;
+    padding: 16px;
+    height: 68px;
   }
-}
 
-@media screen and (max-width: 575px) {
   .nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    display: none;
   }
 
   .button {
-    width: 100% !important;
-    max-width: 575px;
+    display: none !important;
   }
+
+  .logo {
+    max-height: 39px;
+    height: 39px;
+  }
+
+  .logo svg {
+    width: 227px !important;
+  }
+}
+
+// mobile menu
+
+.mobileMenu {
+  position: relative;
+  margin-top: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+
+  color: $light;
+}
+
+.navMobileBox {
+  display: flex;
+}
+
+.navMobileTitle {
+  @include p4;
+  width: 113px;
+}
+
+.navMobile {
+  @include p1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  // margin-left: auto;
+  margin-left: 19px;
+  margin-right: 9px;
+
+  // width: 202px;
+}
+
+.buttonMobile {
+  margin-top: auto !important;
+
+  width: 100% !important;
+  height: 72px !important;
+  color: $light !important;
+}
+
+.plusIcon {
+  stroke: $light;
+  stroke-width: 2px;
+  opacity: 0.08;
+}
+
+.topPluses,
+.bottomPluses {
+  display: flex;
+  justify-content: space-between;
+}
+
+.topPluses {
+  margin-bottom: 48px;
+}
+
+.bottomPluses {
+  margin-bottom: 30px;
 }

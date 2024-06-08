@@ -1,6 +1,6 @@
 import styles from '../styles/components/HomePage.module.scss';
 
-import Hero from '@/components/organisms/Hero';
+import Hero from '@/components/organisms/HomeComponents/Hero';
 import WhyChoose from '@/components/organisms/HomeComponents/WhyChoose';
 import Business from '@/components/organisms/HomeComponents/Business';
 import Individuals from '@/components/organisms/HomeComponents/Individuals';

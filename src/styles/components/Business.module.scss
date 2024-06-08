@@ -19,13 +19,16 @@
   max-width: 668px;
 }
 
-@media screen and (max-width: $maxTablet) {
+@media screen and (max-width: 1200px) {
   .section {
     flex-direction: column;
   }
   .box {
     width: 100%;
   }
+}
+
+@media screen and (max-width: 900px) {
   .imageWithButton {
     width: 100%;
     height: auto;

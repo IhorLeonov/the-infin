@@ -18,7 +18,7 @@
   max-width: 668px;
 }
 
-@media screen and (max-width: $maxTablet) {
+@media screen and (max-width: 1200px) {
   .section {
     flex-direction: column;
   }
@@ -27,7 +27,13 @@
   }
   .imageWithButton {
     order: 3;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .imageWithButton {
     width: 100%;
     height: auto;
+    margin-left: 0;
   }
 }
