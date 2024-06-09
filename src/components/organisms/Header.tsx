@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import styles from '../../styles/components/Header.module.scss';
 import clsx from 'clsx';
 
@@ -30,14 +30,16 @@ export default function Header({}: HeaderProps) {
 
   const variantsHeader: Variants = {
     short: {
-      height: isMenuOpen ? '100dvh' : '68px',
+      height: isMenuOpen ? '100lvh' : '68px',
       backgroundColor: isMenuOpen ? '#121212' : 'transparent',
+      transition: { duration: 0.4 },
     },
   };
 
   const variantsMobileMenu: Variants = {
     short: {
       y: isMenuOpen ? '0%' : '-150%',
+      transition: { duration: 0.4 },
     },
   };
 
@@ -74,6 +76,16 @@ export default function Header({}: HeaderProps) {
   const swipeHandlers = useSwipeable({
     onSwipedUp: () => handleCloseMenu(),
   });
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.body.style.overflow = 'scroll';
+    };
+  }, [isMenuOpen]);
 
   return (
     <>
