@@ -1,15 +1,6 @@
-// 'use client';
-
-import React, {
-  DetailedHTMLProps,
-  HTMLAttributes,
-  // useEffect,
-  // useRef,
-  // useState,
-} from 'react';
+import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 import styles from '../../styles/components/Logo.module.scss';
 import clsx from 'clsx';
-// import { useRefDimensions } from '@/hooks/useRefDimensions';
 
 export interface LogoProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -21,42 +12,8 @@ export default function Logo({
   className,
   ...props
 }: LogoProps) {
-  // const [logoWidth, setLogoWidth] = useState<number>(0);
-  // const [windowSize, setWindowSize] = useState({
-  //   height: window.innerHeight,
-  //   width: window.innerWidth,
-  // });
-
-  // const logoBoxRef = useRef<HTMLDivElement>(null);
-  // const dimensions = useRefDimensions(logoBoxRef);
-
-  // useEffect(() => {
-  //   setLogoWidth(dimensions.width);
-  // }, [dimensions, logoWidth, windowSize.height, windowSize.width]);
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setWindowSize({
-  //       height: window.innerHeight,
-  //       width: window.innerWidth,
-  //     });
-  //   };
-
-  //   window.addEventListener('resize', handleResize);
-
-  //   return () => {
-  //     window.removeEventListener('resize', handleResize);
-  //   };
-  // }, [windowSize]);
-
   return (
-    <div
-      // ref={logoBoxRef}
-      id="logo-box"
-      className={clsx(styles.logoBox, className)}
-      // style={{ height: logoWidth / 5.72 }}
-      {...props}
-    >
+    <div id="logo-box" className={clsx(styles.logoBox, className)} {...props}>
       <svg
         width="1380"
         height="242"

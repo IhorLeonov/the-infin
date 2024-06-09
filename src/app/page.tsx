@@ -1,4 +1,4 @@
-import styles from '../styles/components/HomePage.module.scss';
+import styles from '../styles/components/pages/Home/HomePage.module.scss';
 
 import Hero from '@/components/organisms/HomeComponents/Hero';
 import WhyChoose from '@/components/organisms/HomeComponents/WhyChoose';
@@ -10,7 +10,9 @@ import LargeImage from '@/components/organisms/LargeImage';
 
 import { fetchDataFromCMS } from '@/lib/api';
 
-export default async function HomePage() {
+interface HomePageProps {}
+
+export default async function HomePage({}: HomePageProps) {
   const { data } = await fetchDataFromCMS();
 
   const content = data.theInfin.theInfinDetail;

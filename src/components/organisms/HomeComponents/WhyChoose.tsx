@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import styles from '../../../styles/components/WhyChoose.module.scss';
+import styles from '../../../styles/components/pages/Home/WhyChoose.module.scss';
 
 import Image from 'next/image';
 import PlusesIcon from '../../../../public/icons/plus-group.svg';

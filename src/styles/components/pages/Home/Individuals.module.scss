@@ -1,15 +1,13 @@
-@import '../variables';
-@import '../mixins';
+@import '../../../variables';
+@import '../../../mixins';
 
 .section {
   display: flex;
   gap: 30px;
-
-  background-color: $light;
+  background-color: #e8e8e8;
 }
 
 .box {
-  // width: calc(100% - 421px);
   width: 100%;
 }
 
@@ -31,12 +29,14 @@
   .box {
     width: 100%;
   }
+  .imageWithButton {
+    order: 3;
+  }
 }
 
 @media screen and (max-width: 900px) {
   .imageWithButton {
     max-width: 100%;
-    // width: 100%;
-    // height: auto;
+    margin-left: 0;
   }
 }

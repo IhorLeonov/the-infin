@@ -8,13 +8,15 @@ import { Variants, motion } from 'framer-motion';
 import { AppContext, IAppContext } from '@/context/app.context';
 import { Button } from '../atoms/Button';
 import { colors } from '@/lib/constants';
+import { useSwipeable } from 'react-swipeable';
+import { useRouter } from 'next/navigation';
 
 import Logo from '../atoms/Logo';
 import useCheckIsMobile from '@/hooks/useCheckIsMobile';
 import useTargetInView from '@/hooks/useTargetInView';
 import ButtonMenu from '../atoms/ButtonMenu';
 import PlusIcon from '../../../public/icons/plus.svg';
-import { useSwipeable } from 'react-swipeable';
+import Link from 'next/link';
 
 interface HeaderProps {}
 
@@ -22,6 +24,7 @@ export default function Header({}: HeaderProps) {
   const { light, dark, accent } = colors;
   const { activeSection } = useContext(AppContext) as IAppContext;
   const { isTablet } = useCheckIsMobile();
+  const router = useRouter();
 
   const targetRef = useRef(null);
   const { isInView } = useTargetInView(targetRef);
@@ -31,8 +34,14 @@ export default function Header({}: HeaderProps) {
   const variantsHeader: Variants = {
     short: {
       height: isMenuOpen ? '100dvh' : '68px',
-      backgroundColor: isMenuOpen ? '#121212' : 'transparent',
       transition: { duration: 0.4 },
+    },
+  };
+
+  const variantsTopBlock = {
+    short: {
+      backgroundColor: isMenuOpen ? '#121212' : '#1212120',
+      transition: { duration: 0.1 },
     },
   };
 
@@ -73,6 +82,11 @@ export default function Header({}: HeaderProps) {
     setIsMenuOpen(false);
   };
 
+  const onToContactClick = () => {
+    router.push('/contact');
+    handleCloseMenu();
+  };
+
   const swipeHandlers = useSwipeable({
     onSwipedUp: () => handleCloseMenu(),
   });
@@ -96,7 +110,7 @@ export default function Header({}: HeaderProps) {
         animate={!isTablet && isInView ? 'large' : 'short'}
         variants={variantsHeader}
       >
-        <div className={styles.topBlock}>
+        <motion.div className={styles.topBlock} variants={variantsTopBlock}>
           <motion.div
             variants={variantsLogo}
             transition={{ duration: 0.7, delay: 0.1 }}
@@ -114,7 +128,7 @@ export default function Header({}: HeaderProps) {
             }}
           >
             <motion.a
-              href="#home"
+              href="/"
               className={styles.link}
               variants={variantsLink(1)}
               transition={{ duration: 0, delay: isInView ? 0.5 : 0.1 }}
@@ -123,7 +137,7 @@ export default function Header({}: HeaderProps) {
             </motion.a>
 
             <motion.a
-              href="#business"
+              href="/business"
               className={styles.link}
               variants={variantsLink(2)}
               transition={{ duration: 0, delay: isInView ? 0.4 : 0.2 }}
@@ -132,7 +146,7 @@ export default function Header({}: HeaderProps) {
             </motion.a>
 
             <motion.a
-              href="#individuals"
+              href="/individuals"
               className={styles.link}
               variants={variantsLink(3)}
               transition={{ duration: 0, delay: 0.3 }}
@@ -141,7 +155,7 @@ export default function Header({}: HeaderProps) {
             </motion.a>
 
             <motion.a
-              href="#reviews"
+              href="/capitalism"
               className={styles.link}
               variants={variantsLink(4)}
               transition={{ duration: 0, delay: isInView ? 0.2 : 0.4 }}
@@ -150,7 +164,7 @@ export default function Header({}: HeaderProps) {
             </motion.a>
 
             <motion.a
-              href="#getstarted"
+              href="/marketing"
               className={styles.link}
               variants={variantsLink(5)}
               transition={{ duration: 0, delay: isInView ? 0.1 : 0.5 }}
@@ -166,6 +180,7 @@ export default function Header({}: HeaderProps) {
             })}
             variants={variantsButton}
             transition={{ duration: 0.4 }}
+            onClick={onToContactClick}
           >
             Contact
           </motion.button>
@@ -173,7 +188,7 @@ export default function Header({}: HeaderProps) {
           {isTablet && (
             <ButtonMenu isOpen={isMenuOpen} setIsOpen={handleMenuOpen} />
           )}
-        </div>
+        </motion.div>
 
         {/* mobile menu */}
         {isTablet && (
@@ -191,25 +206,45 @@ export default function Header({}: HeaderProps) {
               <div className={styles.navMobileBox}>
                 <h3 className={styles.navMobileTitle}>Menu</h3>
                 <nav className={styles.navMobile}>
-                  <a href="#home" className={styles.mobileLink}>
+                  <Link
+                    href="/"
+                    className={styles.mobileLink}
+                    onClick={handleCloseMenu}
+                  >
                     Home
-                  </a>
+                  </Link>
 
-                  <a href="#business" className={styles.mobileLink}>
+                  <Link
+                    href="/business"
+                    className={styles.mobileLink}
+                    onClick={handleCloseMenu}
+                  >
                     For Businesses
-                  </a>
+                  </Link>
 
-                  <a href="#individuals" className={styles.mobileLink}>
+                  <Link
+                    href="/individuals"
+                    className={styles.mobileLink}
+                    onClick={handleCloseMenu}
+                  >
                     For Individuals
-                  </a>
+                  </Link>
 
-                  <a href="#reviews" className={styles.mobileLink}>
+                  <Link
+                    href="/capitalism"
+                    className={styles.mobileLink}
+                    onClick={handleCloseMenu}
+                  >
                     Capitalism 2.0
-                  </a>
+                  </Link>
 
-                  <a href="#getstarted" className={styles.mobileLink}>
+                  <Link
+                    href="/marketing"
+                    className={styles.mobileLink}
+                    onClick={handleCloseMenu}
+                  >
                     Marketing Efforts
-                  </a>
+                  </Link>
                 </nav>
               </div>
             </div>
@@ -220,7 +255,11 @@ export default function Header({}: HeaderProps) {
                 <PlusIcon className={styles.plusIcon} />
               </div>
 
-              <Button className={styles.buttonMobile} appearance="ghost">
+              <Button
+                className={styles.buttonMobile}
+                appearance="ghost"
+                onClick={onToContactClick}
+              >
                 Contact
               </Button>
             </div>

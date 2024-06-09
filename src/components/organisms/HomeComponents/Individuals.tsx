@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../../styles/components/Individuals.module.scss';
+import styles from '../../../styles/components/pages/Home/Individuals.module.scss';
 import clsx from 'clsx';
 
 import { Section } from '../../atoms/Section';

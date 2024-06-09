@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useContext, useEffect, useRef } from 'react';
-import styles from '../../../styles/components/Business.module.scss';
+import styles from '../../../styles/components/pages/Home/Business.module.scss';
 import clsx from 'clsx';
 
 import { Section } from '../../atoms/Section';
