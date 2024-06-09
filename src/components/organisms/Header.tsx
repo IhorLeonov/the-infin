@@ -1,20 +1,20 @@
 'use client';
 
-import React, { useContext, useRef, useState } from 'react';
+import React, { useCallback, useContext, useRef, useState } from 'react';
 import styles from '../../styles/components/Header.module.scss';
 import clsx from 'clsx';
 
 import { Variants, motion } from 'framer-motion';
 import { AppContext, IAppContext } from '@/context/app.context';
+import { Button } from '../atoms/Button';
 import { colors } from '@/lib/constants';
 
 import Logo from '../atoms/Logo';
 import useCheckIsMobile from '@/hooks/useCheckIsMobile';
 import useTargetInView from '@/hooks/useTargetInView';
-
 import ButtonMenu from '../atoms/ButtonMenu';
 import PlusIcon from '../../../public/icons/plus.svg';
-import { Button } from '../atoms/Button';
+import { useSwipeable } from 'react-swipeable';
 
 interface HeaderProps {}
 
@@ -28,31 +28,30 @@ export default function Header({}: HeaderProps) {
 
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-  const variants = {
+  const variantsHeader: Variants = {
     short: {
       height: isMenuOpen ? '100vh' : '68px',
       backgroundColor: isMenuOpen ? '#121212' : 'transparent',
     },
-    large: {},
   };
 
-  const variantsLogo = {
+  const variantsMobileMenu: Variants = {
+    short: {
+      y: isMenuOpen ? '0%' : '-150%',
+    },
+  };
+
+  const variantsLogo: Variants = {
     short: { maxWidth: 285 },
     large: { maxWidth: 514 },
   };
 
-  const variantsButton = {
+  const variantsButton: Variants = {
     short: {
       height: 50,
       width: 130,
     },
-    large: {},
   };
-
-  // const variantsMenu = {
-  //   hidden: { display: 'none'},
-  //   visible: { display: 'block' },
-  // };
 
   const variantsLink = (column: number): Variants => {
     return {
@@ -68,14 +67,22 @@ export default function Header({}: HeaderProps) {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  const swipeHandlers = useSwipeable({
+    onSwipedUp: () => handleCloseMenu(),
+  });
+
   return (
     <>
       <div ref={targetRef} />
       <motion.header
         className={styles.header}
         initial={'short'}
-        variants={variants}
         animate={!isTablet && isInView ? 'large' : 'short'}
+        variants={variantsHeader}
       >
         <div className={styles.topBlock}>
           <motion.div
@@ -157,8 +164,12 @@ export default function Header({}: HeaderProps) {
         </div>
 
         {/* mobile menu */}
-        {isTablet && isMenuOpen && (
-          <motion.div className={styles.mobileMenu}>
+        {isTablet && (
+          <motion.div
+            className={styles.mobileMenu}
+            variants={variantsMobileMenu}
+            {...swipeHandlers}
+          >
             <div>
               <div className={styles.topPluses}>
                 <PlusIcon className={styles.plusIcon} />
