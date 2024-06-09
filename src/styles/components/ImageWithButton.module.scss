@@ -1,11 +1,12 @@
 .wrapper {
   position: relative;
 
-  width: 421px;
-  height: 636px;
+  // width: 421px;
+  // height: 636px;
+  width: 100%;
+  height: auto;
 
   border-radius: 20px;
-
   overflow: hidden;
 
   & .button {

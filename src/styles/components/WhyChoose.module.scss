@@ -113,7 +113,6 @@
 
   .rightBlock {
     width: 100%;
-    min-width: none;
   }
 
   .plusesContainer {
@@ -133,7 +132,7 @@
   .imageContainer {
     margin-top: 20px;
     margin-left: 0;
-    width: auto;
+    width: 100%;
     height: auto;
   }
 }

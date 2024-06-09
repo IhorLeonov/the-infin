@@ -9,7 +9,8 @@
 }
 
 .box {
-  width: calc(100% - 421px);
+  // width: calc(100% - 421px);
+  width: 100%;
 }
 
 .title {
@@ -17,6 +18,10 @@
 
   margin-top: 36px;
   max-width: 668px;
+}
+
+.imageWithButton {
+  max-width: 421px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -30,7 +35,8 @@
 
 @media screen and (max-width: 900px) {
   .imageWithButton {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    // width: 100%;
+    // height: auto;
   }
 }
