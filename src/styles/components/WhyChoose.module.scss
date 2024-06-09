@@ -74,7 +74,7 @@
 .image {
   border-radius: 20px;
   width: 100% !important;
-  height: 100% !important;
+  height: auto !important;
 
   object-position: top;
   object-fit: cover;
@@ -91,7 +91,8 @@
 
 @media screen and (max-width: $maxTablet) {
   .section {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     padding-top: 100px;
     padding-bottom: 20px;
     margin-bottom: 80px;
@@ -112,6 +113,7 @@
 
   .rightBlock {
     width: 100%;
+    min-width: none;
   }
 
   .plusesContainer {
@@ -131,7 +133,7 @@
   .imageContainer {
     margin-top: 20px;
     margin-left: 0;
-    width: 100%;
+    width: auto;
     height: auto;
   }
 }

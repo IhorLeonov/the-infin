@@ -30,7 +30,7 @@ export default function Header({}: HeaderProps) {
 
   const variantsHeader: Variants = {
     short: {
-      height: isMenuOpen ? '100lvh' : '68px',
+      height: isMenuOpen ? '100dvh' : '68px',
       backgroundColor: isMenuOpen ? '#121212' : 'transparent',
       transition: { duration: 0.4 },
     },
