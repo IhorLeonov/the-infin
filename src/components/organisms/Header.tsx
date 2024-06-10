@@ -71,9 +71,6 @@ export default function Header({}: HeaderProps) {
     };
   };
 
-  const colorCondition =
-    activeSection?.includes('reviews') || activeSection?.includes('home-image');
-
   const handleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -101,6 +98,9 @@ export default function Header({}: HeaderProps) {
     };
   }, [isMenuOpen]);
 
+  const colorCondition =
+    activeSection?.includes('reviews') || activeSection?.includes('home-image');
+
   return (
     <>
       <div ref={targetRef} />
@@ -121,18 +121,21 @@ export default function Header({}: HeaderProps) {
             />
           </motion.div>
 
-          <nav
-            className={styles.nav}
-            style={{
-              color: colorCondition ? light : dark,
-            }}
-          >
+          <nav className={styles.nav}>
             <motion.div
               variants={variantsLink(1)}
-              transition={{ duration: 0, delay: isInView ? 0.5 : 0.1 }}
+              transition={{
+                duration: 0,
+                delay: isInView ? 0.5 : 0.1,
+              }}
             >
               <Link href="/" className={styles.link}>
-                Home
+                <motion.span
+                  animate={{ color: colorCondition ? light : dark }}
+                  transition={{ duration: 0.5 }}
+                >
+                  Home
+                </motion.span>
               </Link>
             </motion.div>
 
@@ -141,7 +144,12 @@ export default function Header({}: HeaderProps) {
               transition={{ duration: 0, delay: isInView ? 0.4 : 0.2 }}
             >
               <Link href="/business" className={styles.link}>
-                For Businesses
+                <motion.span
+                  animate={{ color: colorCondition ? light : dark }}
+                  transition={{ duration: 0.5 }}
+                >
+                  For Businesses
+                </motion.span>
               </Link>
             </motion.div>
 
@@ -151,7 +159,12 @@ export default function Header({}: HeaderProps) {
               transition={{ duration: 0, delay: 0.3 }}
             >
               <Link href="/individuals" className={styles.link}>
-                For Individuals
+                <motion.span
+                  animate={{ color: colorCondition ? light : dark }}
+                  transition={{ duration: 0.5 }}
+                >
+                  For Individuals
+                </motion.span>
               </Link>
             </motion.div>
 
@@ -160,7 +173,12 @@ export default function Header({}: HeaderProps) {
               transition={{ duration: 0, delay: isInView ? 0.2 : 0.4 }}
             >
               <Link href="/capitalism" className={styles.link}>
-                Capitalism 2.0
+                <motion.span
+                  animate={{ color: colorCondition ? light : dark }}
+                  transition={{ duration: 0.5 }}
+                >
+                  Capitalism 2.0
+                </motion.span>
               </Link>
             </motion.div>
 
@@ -170,7 +188,12 @@ export default function Header({}: HeaderProps) {
               transition={{ duration: 0, delay: isInView ? 0.1 : 0.5 }}
             >
               <Link href="/marketing" className={styles.link}>
-                Marketing Efforts
+                <motion.span
+                  animate={{ color: colorCondition ? light : dark }}
+                  transition={{ duration: 0.6 }}
+                >
+                  Marketing Efforts
+                </motion.span>
               </Link>
             </motion.div>
           </nav>
