@@ -127,50 +127,52 @@ export default function Header({}: HeaderProps) {
               color: colorCondition ? light : dark,
             }}
           >
-            <motion.a
-              href="/"
-              className={styles.link}
+            <motion.div
               variants={variantsLink(1)}
               transition={{ duration: 0, delay: isInView ? 0.5 : 0.1 }}
             >
-              Home
-            </motion.a>
+              <Link href="/" className={styles.link}>
+                Home
+              </Link>
+            </motion.div>
 
-            <motion.a
-              href="/business"
-              className={styles.link}
+            <motion.div
               variants={variantsLink(2)}
               transition={{ duration: 0, delay: isInView ? 0.4 : 0.2 }}
             >
-              For Businesses
-            </motion.a>
+              <Link href="/business" className={styles.link}>
+                For Businesses
+              </Link>
+            </motion.div>
 
-            <motion.a
-              href="/individuals"
+            <motion.div
               className={styles.link}
               variants={variantsLink(3)}
               transition={{ duration: 0, delay: 0.3 }}
             >
-              For Individuals
-            </motion.a>
+              <Link href="/individuals" className={styles.link}>
+                For Individuals
+              </Link>
+            </motion.div>
 
-            <motion.a
-              href="/capitalism"
-              className={styles.link}
+            <motion.div
               variants={variantsLink(4)}
               transition={{ duration: 0, delay: isInView ? 0.2 : 0.4 }}
             >
-              Capitalism 2.0
-            </motion.a>
+              <Link href="/capitalism" className={styles.link}>
+                Capitalism 2.0
+              </Link>
+            </motion.div>
 
-            <motion.a
-              href="/marketing"
+            <motion.div
               className={styles.link}
               variants={variantsLink(5)}
               transition={{ duration: 0, delay: isInView ? 0.1 : 0.5 }}
             >
-              Marketing Efforts
-            </motion.a>
+              <Link href="/marketing" className={styles.link}>
+                Marketing Efforts
+              </Link>
+            </motion.div>
           </nav>
 
           <motion.button
